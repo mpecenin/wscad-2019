@@ -1,0 +1,4326 @@
+Logging to ../result/node6-ib_HalideBlur-v4_2018-08-16-05-16-49-435440
+random_seed: 2203339736
+env: HalideBlur-v4
+action: Discrete(70)
+observation: Box(128,)
+init_exec_time_sec: 0.055881199
+reward_scale: 1789.5106366633258
+max_episodes: 10000
+horizon: 256
+epochs: 4
+batchsize: 64
+stepsize: 0.0025
+clip_param: 0.2
+entcoeff: 0.03
+gamma: 0.99
+lam: 0.95
+annealing: linear
+hid_layers_size: 64
+num_hid_layers: 2
+********** Iteration 0 ************
+- best, reward: 91.280252, exec: 0.000961016, duration: 0:00:28.806183, schedule: blur_y.gpu_tile(x, y, xi, yi, 16, 16); 
+- best, reward: 89.779677, exec: 0.000681931, duration: 0:01:04.467259, schedule: blur_y.gpu_tile(x, y, xi, yi, 64, 16); blur_y.unroll(xi, 2); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00404 |      -0.12745 |     600.29260 |       0.00029 |       4.24820
+     -0.05145 |      -0.12740 |     554.82849 |       0.00182 |       4.24667
+     -0.07671 |      -0.12721 |     519.75696 |       0.00799 |       4.24043
+     -0.08786 |      -0.12692 |     489.77917 |       0.01751 |       4.23080
+Evaluating losses...
+     -0.09289 |      -0.12674 |     472.40854 |       0.02375 |       4.22455
+---------------------------------
+| EpExecMean      | 0.008       |
+| EpLenMean       | 24.2        |
+| EpRewMean       | 65.1        |
+| EpThisIter      | 5           |
+| EpisodesSoFar   | 5           |
+| TimeElapsed     | 181         |
+| TimestepsSoFar  | 121         |
+| ev_tdlam_before | 0.00152     |
+| loss_ent        | 4.2245455   |
+| loss_kl         | 0.023750845 |
+| loss_pol_entpen | -0.12673636 |
+| loss_pol_surr   | -0.092885   |
+| loss_vf_loss    | 472.40854   |
+---------------------------------
+********** Iteration 1 ************
+- best, reward: 87.792801, exec: 0.000674597, duration: 0:03:44.590310, schedule: blur_y.gpu_tile(x, y, xi, yi, 128, 8); blur_y.unroll(xi, 2); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00097 |      -0.12702 |     305.05493 |       0.00068 |       4.23403
+     -0.03342 |      -0.12671 |     255.89699 |       0.00654 |       4.22363
+     -0.05167 |      -0.12614 |     240.68884 |       0.02028 |       4.20472
+     -0.05949 |      -0.12599 |     232.98141 |       0.02603 |       4.19975
+Evaluating losses...
+     -0.06393 |      -0.12599 |     224.90425 |       0.02821 |       4.19970
+---------------------------------
+| EpExecMean      | 0.00531     |
+| EpLenMean       | 62.5        |
+| EpRewMean       | 34.2        |
+| EpThisIter      | 3           |
+| EpisodesSoFar   | 8           |
+| TimeElapsed     | 280         |
+| TimestepsSoFar  | 500         |
+| ev_tdlam_before | 0.153       |
+| loss_ent        | 4.1997023   |
+| loss_kl         | 0.028208233 |
+| loss_pol_entpen | -0.12599105 |
+| loss_pol_surr   | -0.06392872 |
+| loss_vf_loss    | 224.90425   |
+---------------------------------
+********** Iteration 2 ************
+- best, reward: 86.819297, exec: 0.000659791, duration: 0:05:36.538481, schedule: blur_y.gpu_tile(x, y, xi, yi, 32, 32); blur_y.unroll(yi, 2); 
+- best, reward: 61.960652, exec: 0.000580800, duration: 0:06:29.379940, schedule: blur_y.bound(x, 0, 3848); blur_y.gpu_tile(x, y, xi, yi, 64, 16); blur_y.compute_root(); blur_y.unroll(yi, 3); 
+- best, reward: 0.955235, exec: 0.000562921, duration: 0:06:57.102160, schedule: blur_y.gpu_tile(x, y, xi, yi, 8, 64); blur_y.unroll(yi, 3); blur_y.unroll(yi, 2); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00026 |      -0.12540 |     541.30524 |       0.00121 |       4.18002
+     -0.05885 |      -0.12500 |     522.57410 |       0.00988 |       4.16652
+     -0.08771 |      -0.12401 |     506.33557 |       0.02403 |       4.13375
+     -0.09944 |      -0.12323 |     493.14679 |       0.04204 |       4.10764
+Evaluating losses...
+     -0.10763 |      -0.12313 |     488.00723 |       0.05089 |       4.10442
+----------------------------------
+| EpExecMean      | 0.00359      |
+| EpLenMean       | 46.5         |
+| EpRewMean       | 33.7         |
+| EpThisIter      | 8            |
+| EpisodesSoFar   | 16           |
+| TimeElapsed     | 469          |
+| TimestepsSoFar  | 744          |
+| ev_tdlam_before | 0.215        |
+| loss_ent        | 4.1044216    |
+| loss_kl         | 0.05088891   |
+| loss_pol_entpen | -0.123132646 |
+| loss_pol_surr   | -0.107628524 |
+| loss_vf_loss    | 488.00723    |
+----------------------------------
+********** Iteration 3 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00310 |      -0.12404 |     333.89059 |       0.00153 |       4.13456
+     -0.04646 |      -0.12420 |     316.45370 |       0.01412 |       4.13994
+     -0.06657 |      -0.12400 |     293.98550 |       0.03051 |       4.13333
+     -0.07705 |      -0.12372 |     272.81866 |       0.03677 |       4.12387
+Evaluating losses...
+     -0.08458 |      -0.12354 |     261.03317 |       0.03768 |       4.11805
+----------------------------------
+| EpExecMean      | 0.00301      |
+| EpLenMean       | 50.4         |
+| EpRewMean       | 35.4         |
+| EpThisIter      | 4            |
+| EpisodesSoFar   | 20           |
+| TimeElapsed     | 604          |
+| TimestepsSoFar  | 1007         |
+| ev_tdlam_before | 0.173        |
+| loss_ent        | 4.118048     |
+| loss_kl         | 0.03767926   |
+| loss_pol_entpen | -0.123541445 |
+| loss_pol_surr   | -0.08457843  |
+| loss_vf_loss    | 261.03317    |
+----------------------------------
+********** Iteration 4 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00011 |      -0.12176 |     235.81326 |       0.00165 |       4.05878
+     -0.05628 |      -0.12119 |     217.73364 |       0.01581 |       4.03966
+     -0.07453 |      -0.12067 |     207.84258 |       0.02810 |       4.02223
+     -0.07962 |      -0.12068 |     197.94495 |       0.03544 |       4.02260
+Evaluating losses...
+     -0.08564 |      -0.12069 |     192.51303 |       0.04231 |       4.02313
+---------------------------------
+| EpExecMean      | 0.00251     |
+| EpLenMean       | 47.5        |
+| EpRewMean       | 34.8        |
+| EpThisIter      | 6           |
+| EpisodesSoFar   | 26          |
+| TimeElapsed     | 767         |
+| TimestepsSoFar  | 1235        |
+| ev_tdlam_before | 0.369       |
+| loss_ent        | 4.023126    |
+| loss_kl         | 0.042307906 |
+| loss_pol_entpen | -0.12069379 |
+| loss_pol_surr   | -0.08564417 |
+| loss_vf_loss    | 192.51303   |
+---------------------------------
+********** Iteration 5 ************
+- best, reward: 84.243985, exec: 0.000422470, duration: 0:14:14.671923, schedule: blur_y.gpu_tile(x, y, xi, yi, 64, 16); blur_y.bound(y, 0, 2568); blur_y.compute_root(); blur_y.unroll(yi, 4); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00169 |      -0.12191 |      99.66966 |       0.00092 |       4.06353
+     -0.04925 |      -0.12229 |      95.58365 |       0.01163 |       4.07637
+     -0.07027 |      -0.12213 |      93.46324 |       0.02859 |       4.07094
+     -0.07768 |      -0.12152 |      91.72527 |       0.04300 |       4.05076
+Evaluating losses...
+     -0.08439 |      -0.12130 |      90.75777 |       0.05028 |       4.04324
+---------------------------------
+| EpExecMean      | 0.00209     |
+| EpLenMean       | 44.5        |
+| EpRewMean       | 30.2        |
+| EpThisIter      | 8           |
+| EpisodesSoFar   | 34          |
+| TimeElapsed     | 907         |
+| TimestepsSoFar  | 1512        |
+| ev_tdlam_before | 0.412       |
+| loss_ent        | 4.0432377   |
+| loss_kl         | 0.05027862  |
+| loss_pol_entpen | -0.12129712 |
+| loss_pol_surr   | -0.08438903 |
+| loss_vf_loss    | 90.75777    |
+---------------------------------
+********** Iteration 6 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00550 |      -0.11970 |     469.81122 |       0.00116 |       3.98988
+     -0.05265 |      -0.11853 |     465.46320 |       0.01292 |       3.95111
+     -0.07239 |      -0.11736 |     459.92303 |       0.02873 |       3.91210
+     -0.08419 |      -0.11684 |     455.58801 |       0.03857 |       3.89474
+Evaluating losses...
+     -0.09301 |      -0.11705 |     453.58633 |       0.04146 |       3.90180
+----------------------------------
+| EpExecMean      | 0.00204      |
+| EpLenMean       | 36.6         |
+| EpRewMean       | 36.1         |
+| EpThisIter      | 14           |
+| EpisodesSoFar   | 48           |
+| TimeElapsed     | 1.14e+03     |
+| TimestepsSoFar  | 1757         |
+| ev_tdlam_before | 0.438        |
+| loss_ent        | 3.9018018    |
+| loss_kl         | 0.04146351   |
+| loss_pol_entpen | -0.11705405  |
+| loss_pol_surr   | -0.093006745 |
+| loss_vf_loss    | 453.58633    |
+----------------------------------
+********** Iteration 7 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00081 |      -0.12250 |     320.42041 |       0.00586 |       4.08326
+     -0.03975 |      -0.12290 |     250.55629 |       0.02983 |       4.09668
+     -0.07144 |      -0.12159 |     204.01797 |       0.03041 |       4.05293
+     -0.08929 |      -0.12027 |     170.95419 |       0.05086 |       4.00890
+Evaluating losses...
+     -0.10403 |      -0.11952 |     157.71410 |       0.07047 |       3.98412
+---------------------------------
+| EpExecMean      | 0.00188     |
+| EpLenMean       | 37.2        |
+| EpRewMean       | 37.7        |
+| EpThisIter      | 7           |
+| EpisodesSoFar   | 55          |
+| TimeElapsed     | 1.28e+03    |
+| TimestepsSoFar  | 2044        |
+| ev_tdlam_before | -0.164      |
+| loss_ent        | 3.9841194   |
+| loss_kl         | 0.0704738   |
+| loss_pol_entpen | -0.11952358 |
+| loss_pol_surr   | -0.10402535 |
+| loss_vf_loss    | 157.7141    |
+---------------------------------
+********** Iteration 8 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00608 |      -0.11171 |     743.66370 |       0.00189 |       3.72351
+     -0.02919 |      -0.10958 |     724.02478 |       0.01742 |       3.65260
+     -0.05442 |      -0.10975 |     702.31531 |       0.02585 |       3.65833
+     -0.06318 |      -0.10901 |     685.30750 |       0.04027 |       3.63366
+Evaluating losses...
+     -0.09226 |      -0.10657 |     673.71118 |       0.05533 |       3.55243
+----------------------------------
+| EpExecMean      | 0.00157      |
+| EpLenMean       | 28.8         |
+| EpRewMean       | 49.1         |
+| EpThisIter      | 25           |
+| EpisodesSoFar   | 80           |
+| TimeElapsed     | 1.6e+03      |
+| TimestepsSoFar  | 2302         |
+| ev_tdlam_before | 0.339        |
+| loss_ent        | 3.5524254    |
+| loss_kl         | 0.055334285  |
+| loss_pol_entpen | -0.106572755 |
+| loss_pol_surr   | -0.0922585   |
+| loss_vf_loss    | 673.7112     |
+----------------------------------
+********** Iteration 9 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00544 |      -0.11158 |     471.97729 |       0.00331 |       3.71930
+     -0.03892 |      -0.10834 |     428.20703 |       0.02543 |       3.61128
+     -0.05116 |      -0.11000 |     391.19611 |       0.03475 |       3.66671
+     -0.05767 |      -0.11117 |     375.29742 |       0.04234 |       3.70559
+Evaluating losses...
+     -0.06626 |      -0.11077 |     369.78796 |       0.04281 |       3.69232
+----------------------------------
+| EpExecMean      | 0.00146      |
+| EpLenMean       | 25.5         |
+| EpRewMean       | 55           |
+| EpThisIter      | 15           |
+| EpisodesSoFar   | 95           |
+| TimeElapsed     | 1.77e+03     |
+| TimestepsSoFar  | 2424         |
+| ev_tdlam_before | 0.373        |
+| loss_ent        | 3.6923215    |
+| loss_kl         | 0.0428121    |
+| loss_pol_entpen | -0.110769644 |
+| loss_pol_surr   | -0.06626329  |
+| loss_vf_loss    | 369.78796    |
+----------------------------------
+********** Iteration 10 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00342 |      -0.11645 |     188.45480 |       0.00214 |       3.88171
+     -0.03975 |      -0.11702 |     112.95407 |       0.02361 |       3.90052
+     -0.06197 |      -0.11622 |     115.30147 |       0.04049 |       3.87396
+     -0.07802 |      -0.11564 |     109.38719 |       0.05295 |       3.85469
+Evaluating losses...
+     -0.08470 |      -0.11569 |     101.78593 |       0.06423 |       3.85639
+----------------------------------
+| EpExecMean      | 0.00143      |
+| EpLenMean       | 28.1         |
+| EpRewMean       | 52.5         |
+| EpThisIter      | 5            |
+| EpisodesSoFar   | 100          |
+| TimeElapsed     | 1.83e+03     |
+| TimestepsSoFar  | 2815         |
+| ev_tdlam_before | 0.27         |
+| loss_ent        | 3.8563852    |
+| loss_kl         | 0.06423154   |
+| loss_pol_entpen | -0.11569155  |
+| loss_pol_surr   | -0.084695145 |
+| loss_vf_loss    | 101.785934   |
+----------------------------------
+********** Iteration 11 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00071 |      -0.09693 |     776.37463 |       0.00224 |       3.23089
+     -0.01527 |      -0.09698 |     714.96307 |       0.01051 |       3.23278
+     -0.02754 |      -0.09916 |     682.44739 |       0.02228 |       3.30528
+     -0.03820 |      -0.10025 |     662.17188 |       0.03804 |       3.34161
+Evaluating losses...
+     -0.04931 |      -0.09981 |     652.43597 |       0.04058 |       3.32702
+----------------------------------
+| EpExecMean      | 0.00104      |
+| EpLenMean       | 14.6         |
+| EpRewMean       | 69           |
+| EpThisIter      | 38           |
+| EpisodesSoFar   | 138          |
+| TimeElapsed     | 2.09e+03     |
+| TimestepsSoFar  | 3072         |
+| ev_tdlam_before | 0.208        |
+| loss_ent        | 3.327024     |
+| loss_kl         | 0.04058251   |
+| loss_pol_entpen | -0.09981072  |
+| loss_pol_surr   | -0.049309798 |
+| loss_vf_loss    | 652.436      |
+----------------------------------
+********** Iteration 12 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00132 |      -0.11194 |     291.72803 |       0.00170 |       3.73148
+     -0.02590 |      -0.11263 |     248.14700 |       0.01167 |       3.75445
+     -0.04067 |      -0.11301 |     228.00977 |       0.04422 |       3.76709
+     -0.05400 |      -0.11154 |     215.57866 |       0.06790 |       3.71815
+Evaluating losses...
+     -0.06160 |      -0.11020 |     210.05713 |       0.08057 |       3.67338
+---------------------------------
+| EpExecMean      | 0.00105     |
+| EpLenMean       | 13.9        |
+| EpRewMean       | 71.5        |
+| EpThisIter      | 9           |
+| EpisodesSoFar   | 147         |
+| TimeElapsed     | 2.22e+03    |
+| TimestepsSoFar  | 3139        |
+| ev_tdlam_before | 0.335       |
+| loss_ent        | 3.673378    |
+| loss_kl         | 0.080573834 |
+| loss_pol_entpen | -0.11020133 |
+| loss_pol_surr   | -0.06159743 |
+| loss_vf_loss    | 210.05713   |
+---------------------------------
+********** Iteration 13 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00462 |      -0.11586 |     209.12093 |       0.00657 |       3.86194
+     -0.02142 |      -0.11453 |     170.49524 |       0.02686 |       3.81760
+     -0.02976 |      -0.11383 |     125.77423 |       0.04189 |       3.79449
+     -0.02744 |      -0.11345 |      69.02887 |       0.05250 |       3.78152
+Evaluating losses...
+     -0.03211 |      -0.11307 |      43.17513 |       0.06185 |       3.76915
+----------------------------------
+| EpExecMean      | 0.00105      |
+| EpLenMean       | 13.9         |
+| EpRewMean       | 71.5         |
+| EpThisIter      | 0            |
+| EpisodesSoFar   | 147          |
+| TimeElapsed     | 2.23e+03     |
+| TimestepsSoFar  | 3139         |
+| ev_tdlam_before | -0.0543      |
+| loss_ent        | 3.769152     |
+| loss_kl         | 0.061853044  |
+| loss_pol_entpen | -0.113074556 |
+| loss_pol_surr   | -0.032113187 |
+| loss_vf_loss    | 43.175125    |
+----------------------------------
+********** Iteration 14 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00406 |      -0.08727 |     780.58655 |       0.00745 |       2.90889
+     -0.01725 |      -0.08595 |     758.96356 |       0.01823 |       2.86496
+     -0.02373 |      -0.09210 |     720.90863 |       0.01603 |       3.06991
+     -0.03929 |      -0.09334 |     683.80469 |       0.03632 |       3.11123
+Evaluating losses...
+     -0.04819 |      -0.09540 |     656.42590 |       0.05357 |       3.18007
+----------------------------------
+| EpExecMean      | 0.00115      |
+| EpLenMean       | 14.9         |
+| EpRewMean       | 70.5         |
+| EpThisIter      | 38           |
+| EpisodesSoFar   | 185          |
+| TimeElapsed     | 2.52e+03     |
+| TimestepsSoFar  | 3839         |
+| ev_tdlam_before | 0.371        |
+| loss_ent        | 3.1800742    |
+| loss_kl         | 0.053566422  |
+| loss_pol_entpen | -0.095402226 |
+| loss_pol_surr   | -0.04819414  |
+| loss_vf_loss    | 656.4259     |
+----------------------------------
+********** Iteration 15 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00194 |      -0.09392 |     728.34058 |       0.00433 |       3.13058
+     -0.01918 |      -0.09379 |     690.87854 |       0.01259 |       3.12630
+     -0.03056 |      -0.09514 |     671.77570 |       0.03394 |       3.17140
+     -0.04453 |      -0.09528 |     650.49268 |       0.05091 |       3.17600
+Evaluating losses...
+     -0.05184 |      -0.09300 |     635.07898 |       0.04946 |       3.10014
+----------------------------------
+| EpExecMean      | 0.00114      |
+| EpLenMean       | 10.6         |
+| EpRewMean       | 78           |
+| EpThisIter      | 44           |
+| EpisodesSoFar   | 229          |
+| TimeElapsed     | 2.85e+03     |
+| TimestepsSoFar  | 4091         |
+| ev_tdlam_before | 0.436        |
+| loss_ent        | 3.100143     |
+| loss_kl         | 0.04946405   |
+| loss_pol_entpen | -0.09300427  |
+| loss_pol_surr   | -0.051835537 |
+| loss_vf_loss    | 635.079      |
+----------------------------------
+********** Iteration 16 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00320 |      -0.09200 |     549.37341 |       0.00225 |       3.06664
+     -0.01052 |      -0.09160 |     533.02118 |       0.01069 |       3.05322
+     -0.03008 |      -0.09349 |     519.22534 |       0.02726 |       3.11617
+     -0.03488 |      -0.09385 |     507.60660 |       0.05843 |       3.12844
+Evaluating losses...
+     -0.04169 |      -0.09303 |     500.75201 |       0.09006 |       3.10091
+----------------------------------
+| EpExecMean      | 0.0017       |
+| EpLenMean       | 5.59         |
+| EpRewMean       | 78.2         |
+| EpThisIter      | 46           |
+| EpisodesSoFar   | 275          |
+| TimeElapsed     | 3.19e+03     |
+| TimestepsSoFar  | 4352         |
+| ev_tdlam_before | 0.557        |
+| loss_ent        | 3.100912     |
+| loss_kl         | 0.09005569   |
+| loss_pol_entpen | -0.09302736  |
+| loss_pol_surr   | -0.041688446 |
+| loss_vf_loss    | 500.752      |
+----------------------------------
+********** Iteration 17 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00424 |      -0.09441 |     455.32230 |       0.00313 |       3.14712
+     -0.02835 |      -0.09121 |     430.69006 |       0.02617 |       3.04035
+     -0.04037 |      -0.08964 |     410.28699 |       0.05013 |       2.98785
+     -0.04501 |      -0.09187 |     399.17126 |       0.05408 |       3.06229
+Evaluating losses...
+     -0.04542 |      -0.09424 |     391.67761 |       0.05046 |       3.14146
+----------------------------------
+| EpExecMean      | 0.00166      |
+| EpLenMean       | 6.08         |
+| EpRewMean       | 74.5         |
+| EpThisIter      | 35           |
+| EpisodesSoFar   | 310          |
+| TimeElapsed     | 3.49e+03     |
+| TimestepsSoFar  | 4597         |
+| ev_tdlam_before | 0.566        |
+| loss_ent        | 3.1414614    |
+| loss_kl         | 0.050460078  |
+| loss_pol_entpen | -0.09424385  |
+| loss_pol_surr   | -0.045416113 |
+| loss_vf_loss    | 391.6776     |
+----------------------------------
+********** Iteration 18 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00224 |      -0.09408 |     482.57892 |       0.00237 |       3.13611
+     -0.02789 |      -0.09554 |     458.12054 |       0.01607 |       3.18473
+     -0.04239 |      -0.09379 |     441.89722 |       0.04123 |       3.12639
+     -0.04847 |      -0.09159 |     430.98993 |       0.06360 |       3.05308
+Evaluating losses...
+     -0.05186 |      -0.09143 |     422.27640 |       0.07264 |       3.04768
+----------------------------------
+| EpExecMean      | 0.00119      |
+| EpLenMean       | 6.35         |
+| EpRewMean       | 73.5         |
+| EpThisIter      | 40           |
+| EpisodesSoFar   | 350          |
+| TimeElapsed     | 3.8e+03      |
+| TimestepsSoFar  | 4842         |
+| ev_tdlam_before | 0.619        |
+| loss_ent        | 3.0476823    |
+| loss_kl         | 0.07263773   |
+| loss_pol_entpen | -0.09143046  |
+| loss_pol_surr   | -0.051864177 |
+| loss_vf_loss    | 422.2764     |
+----------------------------------
+********** Iteration 19 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.01613 |      -0.08567 |     419.43854 |       0.02306 |       2.85561
+      0.00401 |      -0.07525 |     406.59189 |       0.01959 |       2.50841
+      0.00902 |      -0.08930 |     392.21033 |       0.15783 |       2.97672
+     -0.00162 |      -0.09117 |     379.76190 |       0.31279 |       3.03892
+Evaluating losses...
+     -0.01707 |      -0.09194 |     371.99078 |       0.31604 |       3.06481
+----------------------------------
+| EpExecMean      | 0.00105      |
+| EpLenMean       | 6.88         |
+| EpRewMean       | 77.1         |
+| EpThisIter      | 36           |
+| EpisodesSoFar   | 386          |
+| TimeElapsed     | 4.14e+03     |
+| TimestepsSoFar  | 5113         |
+| ev_tdlam_before | 0.739        |
+| loss_ent        | 3.0648077    |
+| loss_kl         | 0.31604487   |
+| loss_pol_entpen | -0.09194423  |
+| loss_pol_surr   | -0.017071668 |
+| loss_vf_loss    | 371.99078    |
+----------------------------------
+********** Iteration 20 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00205 |      -0.09235 |     498.77344 |       0.00286 |       3.07845
+     -0.02286 |      -0.09315 |     475.33429 |       0.01249 |       3.10499
+     -0.04347 |      -0.09104 |     455.71780 |       0.02318 |       3.03457
+     -0.05206 |      -0.09242 |     440.57275 |       0.05396 |       3.08057
+Evaluating losses...
+     -0.05544 |      -0.09330 |     433.06509 |       0.07682 |       3.10996
+----------------------------------
+| EpExecMean      | 0.00137      |
+| EpLenMean       | 6.08         |
+| EpRewMean       | 76.3         |
+| EpThisIter      | 52           |
+| EpisodesSoFar   | 438          |
+| TimeElapsed     | 4.49e+03     |
+| TimestepsSoFar  | 5375         |
+| ev_tdlam_before | 0.704        |
+| loss_ent        | 3.1099558    |
+| loss_kl         | 0.07681834   |
+| loss_pol_entpen | -0.09329867  |
+| loss_pol_surr   | -0.055435352 |
+| loss_vf_loss    | 433.0651     |
+----------------------------------
+********** Iteration 21 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00374 |      -0.09331 |     351.55295 |       0.00154 |       3.11018
+     -0.02565 |      -0.08909 |     341.22974 |       0.01905 |       2.96975
+     -0.03133 |      -0.08743 |     333.40186 |       0.03575 |       2.91448
+     -0.03655 |      -0.09075 |     327.69806 |       0.03172 |       3.02505
+Evaluating losses...
+     -0.03868 |      -0.09328 |     323.74207 |       0.03093 |       3.10924
+----------------------------------
+| EpExecMean      | 0.00154      |
+| EpLenMean       | 5.64         |
+| EpRewMean       | 70.6         |
+| EpThisIter      | 40           |
+| EpisodesSoFar   | 478          |
+| TimeElapsed     | 4.87e+03     |
+| TimestepsSoFar  | 5629         |
+| ev_tdlam_before | 0.685        |
+| loss_ent        | 3.1092446    |
+| loss_kl         | 0.030933166  |
+| loss_pol_entpen | -0.093277335 |
+| loss_pol_surr   | -0.03868483  |
+| loss_vf_loss    | 323.74207    |
+----------------------------------
+********** Iteration 22 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00019 |      -0.09923 |     247.47932 |       0.00103 |       3.30751
+     -0.02321 |      -0.09972 |     237.72687 |       0.00921 |       3.32413
+     -0.04128 |      -0.09834 |     230.83087 |       0.02078 |       3.27808
+     -0.04951 |      -0.09792 |     225.68835 |       0.03115 |       3.26398
+Evaluating losses...
+     -0.05316 |      -0.09836 |     222.67966 |       0.03843 |       3.27883
+---------------------------------
+| EpExecMean      | 0.00199     |
+| EpLenMean       | 6.02        |
+| EpRewMean       | 66.1        |
+| EpThisIter      | 32          |
+| EpisodesSoFar   | 510         |
+| TimeElapsed     | 5.24e+03    |
+| TimestepsSoFar  | 5883        |
+| ev_tdlam_before | 0.759       |
+| loss_ent        | 3.2788327   |
+| loss_kl         | 0.03843417  |
+| loss_pol_entpen | -0.09836498 |
+| loss_pol_surr   | -0.05315534 |
+| loss_vf_loss    | 222.67966   |
+---------------------------------
+********** Iteration 23 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00135 |      -0.09517 |     300.55469 |       0.00149 |       3.17237
+     -0.03527 |      -0.09256 |     290.12640 |       0.02310 |       3.08546
+     -0.04915 |      -0.08903 |     280.45251 |       0.05073 |       2.96757
+     -0.05200 |      -0.08940 |     265.00775 |       0.05237 |       2.97992
+Evaluating losses...
+     -0.06041 |      -0.09166 |     256.50888 |       0.03940 |       3.05547
+----------------------------------
+| EpExecMean      | 0.00246      |
+| EpLenMean       | 7.41         |
+| EpRewMean       | 68.7         |
+| EpThisIter      | 34           |
+| EpisodesSoFar   | 544          |
+| TimeElapsed     | 5.63e+03     |
+| TimestepsSoFar  | 6141         |
+| ev_tdlam_before | 0.693        |
+| loss_ent        | 3.0554662    |
+| loss_kl         | 0.039403796  |
+| loss_pol_entpen | -0.09166399  |
+| loss_pol_surr   | -0.060408548 |
+| loss_vf_loss    | 256.50888    |
+----------------------------------
+********** Iteration 24 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00155 |      -0.09284 |     274.97775 |       0.00224 |       3.09483
+     -0.02749 |      -0.09173 |     250.53322 |       0.01153 |       3.05773
+     -0.04190 |      -0.08816 |     233.89206 |       0.02509 |       2.93876
+     -0.04905 |      -0.08610 |     223.55367 |       0.03924 |       2.87009
+Evaluating losses...
+     -0.05155 |      -0.08626 |     219.30737 |       0.04269 |       2.87542
+----------------------------------
+| EpExecMean      | 0.00244      |
+| EpLenMean       | 6.77         |
+| EpRewMean       | 69.9         |
+| EpThisIter      | 40           |
+| EpisodesSoFar   | 584          |
+| TimeElapsed     | 6.05e+03     |
+| TimestepsSoFar  | 6398         |
+| ev_tdlam_before | 0.749        |
+| loss_ent        | 2.8754249    |
+| loss_kl         | 0.04269308   |
+| loss_pol_entpen | -0.08626275  |
+| loss_pol_surr   | -0.051545486 |
+| loss_vf_loss    | 219.30737    |
+----------------------------------
+********** Iteration 25 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00064 |      -0.08467 |     363.96936 |       0.00116 |       2.82219
+     -0.01737 |      -0.08446 |     342.60056 |       0.00813 |       2.81546
+     -0.03398 |      -0.08416 |     331.51129 |       0.01439 |       2.80547
+     -0.04328 |      -0.08510 |     322.04602 |       0.02673 |       2.83661
+Evaluating losses...
+     -0.04735 |      -0.08655 |     316.75107 |       0.03935 |       2.88507
+----------------------------------
+| EpExecMean      | 0.00194      |
+| EpLenMean       | 5.94         |
+| EpRewMean       | 77.6         |
+| EpThisIter      | 49           |
+| EpisodesSoFar   | 633          |
+| TimeElapsed     | 6.45e+03     |
+| TimestepsSoFar  | 6656         |
+| ev_tdlam_before | 0.759        |
+| loss_ent        | 2.8850658    |
+| loss_kl         | 0.039347824  |
+| loss_pol_entpen | -0.08655198  |
+| loss_pol_surr   | -0.047347166 |
+| loss_vf_loss    | 316.75107    |
+----------------------------------
+********** Iteration 26 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00270 |      -0.09004 |     336.26874 |       0.00126 |       3.00138
+     -0.02436 |      -0.08924 |     329.16525 |       0.01344 |       2.97451
+     -0.03635 |      -0.08923 |     321.68436 |       0.02634 |       2.97443
+     -0.04195 |      -0.09100 |     314.60812 |       0.03206 |       3.03323
+Evaluating losses...
+     -0.04767 |      -0.09220 |     309.76593 |       0.03501 |       3.07330
+----------------------------------
+| EpExecMean      | 0.0022       |
+| EpLenMean       | 5.48         |
+| EpRewMean       | 76           |
+| EpThisIter      | 44           |
+| EpisodesSoFar   | 677          |
+| TimeElapsed     | 6.84e+03     |
+| TimestepsSoFar  | 6906         |
+| ev_tdlam_before | 0.743        |
+| loss_ent        | 3.0733023    |
+| loss_kl         | 0.035011213  |
+| loss_pol_entpen | -0.092199065 |
+| loss_pol_surr   | -0.04767235  |
+| loss_vf_loss    | 309.76593    |
+----------------------------------
+********** Iteration 27 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00140 |      -0.09015 |     211.58966 |       0.00102 |       3.00487
+     -0.01664 |      -0.08882 |     206.73145 |       0.00974 |       2.96051
+     -0.02666 |      -0.08783 |     201.78391 |       0.02696 |       2.92767
+     -0.03544 |      -0.09001 |     196.48788 |       0.03869 |       3.00041
+Evaluating losses...
+     -0.03892 |      -0.09188 |     193.66678 |       0.04928 |       3.06275
+----------------------------------
+| EpExecMean      | 0.00166      |
+| EpLenMean       | 5.37         |
+| EpRewMean       | 70.5         |
+| EpThisIter      | 47           |
+| EpisodesSoFar   | 724          |
+| TimeElapsed     | 7.24e+03     |
+| TimestepsSoFar  | 7166         |
+| ev_tdlam_before | 0.825        |
+| loss_ent        | 3.0627475    |
+| loss_kl         | 0.049284592  |
+| loss_pol_entpen | -0.09188242  |
+| loss_pol_surr   | -0.038918827 |
+| loss_vf_loss    | 193.66678    |
+----------------------------------
+********** Iteration 28 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00038 |      -0.09283 |     179.98708 |       0.00174 |       3.09428
+     -0.01391 |      -0.09342 |     173.96446 |       0.01457 |       3.11390
+     -0.02689 |      -0.09332 |     169.04410 |       0.02937 |       3.11066
+     -0.03840 |      -0.09339 |     165.07970 |       0.04577 |       3.11312
+Evaluating losses...
+     -0.04301 |      -0.09383 |     162.39020 |       0.05373 |       3.12778
+----------------------------------
+| EpExecMean      | 0.0014       |
+| EpLenMean       | 5.66         |
+| EpRewMean       | 64.9         |
+| EpThisIter      | 42           |
+| EpisodesSoFar   | 766          |
+| TimeElapsed     | 7.66e+03     |
+| TimestepsSoFar  | 7421         |
+| ev_tdlam_before | 0.831        |
+| loss_ent        | 3.1277826    |
+| loss_kl         | 0.053733543  |
+| loss_pol_entpen | -0.09383348  |
+| loss_pol_surr   | -0.043005306 |
+| loss_vf_loss    | 162.3902     |
+----------------------------------
+********** Iteration 29 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00191 |      -0.09221 |     180.88089 |       0.00108 |       3.07365
+     -0.01621 |      -0.09208 |     176.38541 |       0.00894 |       3.06946
+     -0.02498 |      -0.09113 |     172.37411 |       0.02652 |       3.03781
+     -0.03186 |      -0.09166 |     167.82608 |       0.03731 |       3.05534
+Evaluating losses...
+     -0.03774 |      -0.09269 |     165.22925 |       0.04209 |       3.08960
+----------------------------------
+| EpExecMean      | 0.000966     |
+| EpLenMean       | 5.86         |
+| EpRewMean       | 68.6         |
+| EpThisIter      | 46           |
+| EpisodesSoFar   | 812          |
+| TimeElapsed     | 8.08e+03     |
+| TimestepsSoFar  | 7679         |
+| ev_tdlam_before | 0.856        |
+| loss_ent        | 3.0895987    |
+| loss_kl         | 0.042086847  |
+| loss_pol_entpen | -0.09268796  |
+| loss_pol_surr   | -0.037738882 |
+| loss_vf_loss    | 165.22925    |
+----------------------------------
+********** Iteration 30 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00527 |      -0.09672 |     148.85428 |       0.00189 |       3.22384
+     -0.03386 |      -0.09649 |     134.85362 |       0.01967 |       3.21626
+     -0.04666 |      -0.09516 |     131.67648 |       0.04479 |       3.17202
+     -0.05239 |      -0.09377 |     125.80272 |       0.05818 |       3.12550
+Evaluating losses...
+     -0.05673 |      -0.09356 |     122.92773 |       0.06150 |       3.11873
+----------------------------------
+| EpExecMean      | 0.000985     |
+| EpLenMean       | 6.13         |
+| EpRewMean       | 68.5         |
+| EpThisIter      | 36           |
+| EpisodesSoFar   | 848          |
+| TimeElapsed     | 8.51e+03     |
+| TimestepsSoFar  | 7935         |
+| ev_tdlam_before | 0.848        |
+| loss_ent        | 3.118731     |
+| loss_kl         | 0.06149622   |
+| loss_pol_entpen | -0.09356193  |
+| loss_pol_surr   | -0.056731768 |
+| loss_vf_loss    | 122.927734   |
+----------------------------------
+********** Iteration 31 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00203 |      -0.09208 |     172.83672 |       0.00086 |       3.06925
+     -0.01070 |      -0.09155 |     167.63196 |       0.00565 |       3.05171
+     -0.02408 |      -0.09094 |     162.71878 |       0.01564 |       3.03141
+     -0.03104 |      -0.09182 |     157.23372 |       0.02742 |       3.06076
+Evaluating losses...
+     -0.03574 |      -0.09238 |     152.94910 |       0.03784 |       3.07934
+----------------------------------
+| EpExecMean      | 0.001        |
+| EpLenMean       | 5.84         |
+| EpRewMean       | 71.5         |
+| EpThisIter      | 50           |
+| EpisodesSoFar   | 898          |
+| TimeElapsed     | 8.92e+03     |
+| TimestepsSoFar  | 8187         |
+| ev_tdlam_before | 0.887        |
+| loss_ent        | 3.07934      |
+| loss_kl         | 0.037844144  |
+| loss_pol_entpen | -0.0923802   |
+| loss_pol_surr   | -0.035741784 |
+| loss_vf_loss    | 152.9491     |
+----------------------------------
+********** Iteration 32 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00178 |      -0.09383 |     109.59941 |       0.00159 |       3.12773
+     -0.02355 |      -0.09203 |     105.97659 |       0.01987 |       3.06752
+     -0.03506 |      -0.08873 |     103.31197 |       0.05265 |       2.95760
+     -0.03981 |      -0.08752 |     100.88320 |       0.08004 |       2.91734
+Evaluating losses...
+     -0.04166 |      -0.08814 |      99.29141 |       0.08762 |       2.93791
+---------------------------------
+| EpExecMean      | 0.00106     |
+| EpLenMean       | 5.97        |
+| EpRewMean       | 71.5        |
+| EpThisIter      | 36          |
+| EpisodesSoFar   | 934         |
+| TimeElapsed     | 9.31e+03    |
+| TimestepsSoFar  | 8444        |
+| ev_tdlam_before | 0.886       |
+| loss_ent        | 2.9379115   |
+| loss_kl         | 0.087621436 |
+| loss_pol_entpen | -0.08813734 |
+| loss_pol_surr   | -0.04165722 |
+| loss_vf_loss    | 99.29141    |
+---------------------------------
+********** Iteration 33 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00296 |      -0.08844 |      97.81836 |       0.00319 |       2.94784
+     -0.02844 |      -0.08264 |      93.80578 |       0.04826 |       2.75474
+     -0.03769 |      -0.07676 |      92.00043 |       0.11173 |       2.55877
+     -0.04132 |      -0.07551 |      88.87769 |       0.12470 |       2.51688
+Evaluating losses...
+     -0.04226 |      -0.07759 |      87.36045 |       0.10338 |       2.58642
+----------------------------------
+| EpExecMean      | 0.00104      |
+| EpLenMean       | 6.51         |
+| EpRewMean       | 75.4         |
+| EpThisIter      | 35           |
+| EpisodesSoFar   | 969          |
+| TimeElapsed     | 9.62e+03     |
+| TimestepsSoFar  | 8689         |
+| ev_tdlam_before | 0.895        |
+| loss_ent        | 2.5864248    |
+| loss_kl         | 0.10338199   |
+| loss_pol_entpen | -0.07759274  |
+| loss_pol_surr   | -0.042264294 |
+| loss_vf_loss    | 87.36045     |
+----------------------------------
+********** Iteration 34 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00034 |      -0.00389 |     212.58862 |      6.06e-05 |       0.12969
+     -0.00076 |      -0.00429 |      58.99090 |      5.00e-05 |       0.14285
+     -0.00055 |      -0.00493 |      49.11733 |       0.00038 |       0.16432
+     -0.00014 |      -0.00587 |      31.25661 |       0.00151 |       0.19559
+Evaluating losses...
+      0.00022 |      -0.00671 |      21.29545 |       0.00295 |       0.22351
+-----------------------------------
+| EpExecMean      | 0.00104       |
+| EpLenMean       | 6.51          |
+| EpRewMean       | 75.4          |
+| EpThisIter      | 0             |
+| EpisodesSoFar   | 969           |
+| TimeElapsed     | 9.63e+03      |
+| TimestepsSoFar  | 8689          |
+| ev_tdlam_before | -0.0176       |
+| loss_ent        | 0.22350606    |
+| loss_kl         | 0.0029549447  |
+| loss_pol_entpen | -0.0067051817 |
+| loss_pol_surr   | 0.00021653064 |
+| loss_vf_loss    | 21.295452     |
+-----------------------------------
+********** Iteration 35 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00194 |      -0.07722 |     188.67377 |       0.00089 |       2.57385
+     -0.01276 |      -0.07660 |     157.01036 |       0.00960 |       2.55343
+     -0.02023 |      -0.07884 |     144.90057 |       0.01821 |       2.62785
+     -0.02688 |      -0.07918 |     139.20929 |       0.03100 |       2.63938
+Evaluating losses...
+     -0.03033 |      -0.07992 |     135.27000 |       0.04098 |       2.66402
+----------------------------------
+| EpExecMean      | 0.00115      |
+| EpLenMean       | 9.51         |
+| EpRewMean       | 72.3         |
+| EpThisIter      | 39           |
+| EpisodesSoFar   | 1008         |
+| TimeElapsed     | 9.92e+03     |
+| TimestepsSoFar  | 9213         |
+| ev_tdlam_before | 0.828        |
+| loss_ent        | 2.664016     |
+| loss_kl         | 0.040976934  |
+| loss_pol_entpen | -0.079920486 |
+| loss_pol_surr   | -0.030331861 |
+| loss_vf_loss    | 135.27       |
+----------------------------------
+********** Iteration 36 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00211 |      -0.08540 |     141.42134 |       0.00116 |       2.84657
+     -0.02746 |      -0.08314 |     135.16328 |       0.01412 |       2.77119
+     -0.03712 |      -0.08221 |     130.04344 |       0.02724 |       2.74047
+     -0.04320 |      -0.08382 |     125.96156 |       0.03590 |       2.79387
+Evaluating losses...
+     -0.04580 |      -0.08505 |     123.47413 |       0.04507 |       2.83507
+----------------------------------
+| EpExecMean      | 0.00124      |
+| EpLenMean       | 8.94         |
+| EpRewMean       | 76.2         |
+| EpThisIter      | 45           |
+| EpisodesSoFar   | 1053         |
+| TimeElapsed     | 1.03e+04     |
+| TimestepsSoFar  | 9471         |
+| ev_tdlam_before | 0.907        |
+| loss_ent        | 2.8350706    |
+| loss_kl         | 0.045073297  |
+| loss_pol_entpen | -0.08505212  |
+| loss_pol_surr   | -0.045800094 |
+| loss_vf_loss    | 123.47413    |
+----------------------------------
+********** Iteration 37 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -7.89e-05 |      -0.08135 |     136.01724 |       0.00141 |       2.71174
+     -0.01390 |      -0.08289 |     131.73145 |       0.01072 |       2.76288
+     -0.03015 |      -0.08282 |     127.14440 |       0.02130 |       2.76068
+     -0.03851 |      -0.08455 |     123.08165 |       0.04295 |       2.81845
+Evaluating losses...
+     -0.04409 |      -0.08596 |     120.60561 |       0.05790 |       2.86522
+----------------------------------
+| EpExecMean      | 0.000963     |
+| EpLenMean       | 5.28         |
+| EpRewMean       | 81.4         |
+| EpThisIter      | 54           |
+| EpisodesSoFar   | 1107         |
+| TimeElapsed     | 1.08e+04     |
+| TimestepsSoFar  | 9728         |
+| ev_tdlam_before | 0.921        |
+| loss_ent        | 2.8652215    |
+| loss_kl         | 0.05790142   |
+| loss_pol_entpen | -0.08595665  |
+| loss_pol_surr   | -0.044090245 |
+| loss_vf_loss    | 120.605606   |
+----------------------------------
+********** Iteration 38 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00178 |      -0.08936 |      98.59862 |       0.00151 |       2.97871
+     -0.02145 |      -0.08851 |      95.06209 |       0.01872 |       2.95025
+     -0.03341 |      -0.08586 |      91.82378 |       0.04769 |       2.86191
+     -0.03827 |      -0.08497 |      88.80556 |       0.06017 |       2.83218
+Evaluating losses...
+     -0.04121 |      -0.08568 |      87.21984 |       0.05887 |       2.85611
+----------------------------------
+| EpExecMean      | 0.000875     |
+| EpLenMean       | 5.48         |
+| EpRewMean       | 75.6         |
+| EpThisIter      | 37           |
+| EpisodesSoFar   | 1144         |
+| TimeElapsed     | 1.12e+04     |
+| TimestepsSoFar  | 9977         |
+| ev_tdlam_before | 0.905        |
+| loss_ent        | 2.8561096    |
+| loss_kl         | 0.05886892   |
+| loss_pol_entpen | -0.085683286 |
+| loss_pol_surr   | -0.041211735 |
+| loss_vf_loss    | 87.21984     |
+----------------------------------
+********** Iteration 39 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00082 |      -0.08428 |      98.53182 |       0.00133 |       2.80935
+     -0.01859 |      -0.08066 |      95.91992 |       0.01510 |       2.68855
+     -0.02709 |      -0.08137 |      93.03217 |       0.02420 |       2.71248
+     -0.03110 |      -0.08495 |      89.92121 |       0.04254 |       2.83153
+Evaluating losses...
+     -0.03796 |      -0.08570 |      87.76196 |       0.05820 |       2.85654
+----------------------------------
+| EpExecMean      | 0.000964     |
+| EpLenMean       | 5.42         |
+| EpRewMean       | 70           |
+| EpThisIter      | 55           |
+| EpisodesSoFar   | 1199         |
+| TimeElapsed     | 1.16e+04     |
+| TimestepsSoFar  | 10236        |
+| ev_tdlam_before | 0.934        |
+| loss_ent        | 2.8565397    |
+| loss_kl         | 0.05819524   |
+| loss_pol_entpen | -0.08569619  |
+| loss_pol_surr   | -0.037961725 |
+| loss_vf_loss    | 87.76196     |
+----------------------------------
+********** Iteration 40 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00293 |      -0.08647 |      94.46808 |       0.00198 |       2.88233
+     -0.02191 |      -0.08218 |      91.09277 |       0.02064 |       2.73938
+     -0.02964 |      -0.07810 |      86.21481 |       0.05191 |       2.60344
+     -0.03072 |      -0.07919 |      80.20205 |       0.05875 |       2.63958
+Evaluating losses...
+     -0.03123 |      -0.08161 |      76.73854 |       0.05122 |       2.72049
+----------------------------------
+| EpExecMean      | 0.000961     |
+| EpLenMean       | 5.08         |
+| EpRewMean       | 67.2         |
+| EpThisIter      | 47           |
+| EpisodesSoFar   | 1246         |
+| TimeElapsed     | 1.21e+04     |
+| TimestepsSoFar  | 10496        |
+| ev_tdlam_before | 0.918        |
+| loss_ent        | 2.720494     |
+| loss_kl         | 0.051218912  |
+| loss_pol_entpen | -0.08161482  |
+| loss_pol_surr   | -0.031225948 |
+| loss_vf_loss    | 76.73854     |
+----------------------------------
+********** Iteration 41 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00248 |      -0.03038 |     196.53009 |       0.00124 |       1.01260
+     -0.01903 |      -0.03037 |      68.87244 |       0.00482 |       1.01249
+     -0.02663 |      -0.02913 |      36.85914 |       0.01189 |       0.97107
+     -0.03414 |      -0.02887 |      40.01624 |       0.01445 |       0.96228
+Evaluating losses...
+     -0.03873 |      -0.02904 |      40.62527 |       0.01346 |       0.96804
+----------------------------------
+| EpExecMean      | 0.00104      |
+| EpLenMean       | 5.52         |
+| EpRewMean       | 65           |
+| EpThisIter      | 15           |
+| EpisodesSoFar   | 1261         |
+| TimeElapsed     | 1.22e+04     |
+| TimestepsSoFar  | 10609        |
+| ev_tdlam_before | 0.636        |
+| loss_ent        | 0.9680418    |
+| loss_kl         | 0.013456567  |
+| loss_pol_entpen | -0.029041255 |
+| loss_pol_surr   | -0.03872697  |
+| loss_vf_loss    | 40.625267    |
+----------------------------------
+********** Iteration 42 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -9.28e-07 |      -0.00238 |     216.74831 |      6.81e-07 |       0.07943
+    -1.39e-05 |      -0.00249 |     143.74973 |      1.56e-05 |       0.08311
+    -4.79e-06 |      -0.00267 |      87.19737 |      7.91e-05 |       0.08894
+     8.67e-06 |      -0.00288 |      55.31197 |       0.00022 |       0.09589
+Evaluating losses...
+     2.23e-05 |      -0.00307 |      47.59412 |       0.00039 |       0.10223
+-----------------------------------
+| EpExecMean      | 0.00104       |
+| EpLenMean       | 5.52          |
+| EpRewMean       | 65            |
+| EpThisIter      | 0             |
+| EpisodesSoFar   | 1261          |
+| TimeElapsed     | 1.22e+04      |
+| TimestepsSoFar  | 10609         |
+| ev_tdlam_before | -0.271        |
+| loss_ent        | 0.10223009    |
+| loss_kl         | 0.00038884988 |
+| loss_pol_entpen | -0.0030669025 |
+| loss_pol_surr   | 2.232194e-05  |
+| loss_vf_loss    | 47.594124     |
+-----------------------------------
+********** Iteration 43 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -5.07e-05 |      -0.00346 |     200.24063 |      4.35e-05 |       0.11532
+     9.95e-05 |      -0.00446 |     175.77744 |       0.00093 |       0.14865
+     -0.00026 |      -0.00659 |     146.20963 |       0.00533 |       0.21972
+     -0.00146 |      -0.01304 |      97.48923 |       0.02909 |       0.43450
+Evaluating losses...
+    -5.31e-08 |      -0.02581 |      76.87544 |       0.09540 |       0.86043
+------------------------------------
+| EpExecMean      | 0.00104        |
+| EpLenMean       | 5.52           |
+| EpRewMean       | 65             |
+| EpThisIter      | 0              |
+| EpisodesSoFar   | 1261           |
+| TimeElapsed     | 1.22e+04       |
+| TimestepsSoFar  | 10609          |
+| ev_tdlam_before | -0.0683        |
+| loss_ent        | 0.86042935     |
+| loss_kl         | 0.095401175    |
+| loss_pol_entpen | -0.02581288    |
+| loss_pol_surr   | -5.3085387e-08 |
+| loss_vf_loss    | 76.87544       |
+------------------------------------
+********** Iteration 44 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.01389 |      -0.06801 |     232.23581 |       0.00939 |       2.26688
+     -0.02800 |      -0.06388 |     236.23257 |       0.01987 |       2.12933
+     -0.02830 |      -0.06437 |     227.67691 |       0.02456 |       2.14554
+     -0.03589 |      -0.06944 |     211.67572 |       0.03408 |       2.31480
+Evaluating losses...
+     -0.03849 |      -0.07220 |     202.73366 |       0.04069 |       2.40671
+---------------------------------
+| EpExecMean      | 0.0012      |
+| EpLenMean       | 12          |
+| EpRewMean       | 68          |
+| EpThisIter      | 56          |
+| EpisodesSoFar   | 1317        |
+| TimeElapsed     | 1.27e+04    |
+| TimestepsSoFar  | 11519       |
+| ev_tdlam_before | 0.964       |
+| loss_ent        | 2.4067085   |
+| loss_kl         | 0.040692978 |
+| loss_pol_entpen | -0.07220126 |
+| loss_pol_surr   | -0.03849168 |
+| loss_vf_loss    | 202.73366   |
+---------------------------------
+********** Iteration 45 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00657 |      -0.07718 |     281.07593 |       0.00175 |       2.57267
+     -0.02059 |      -0.07679 |     244.28239 |       0.01116 |       2.55968
+     -0.03389 |      -0.07544 |     219.41522 |       0.02542 |       2.51473
+     -0.04997 |      -0.07381 |     208.47897 |       0.03236 |       2.46018
+Evaluating losses...
+     -0.05251 |      -0.07410 |     202.00275 |       0.03019 |       2.46999
+----------------------------------
+| EpExecMean      | 0.00112      |
+| EpLenMean       | 4.42         |
+| EpRewMean       | 75.8         |
+| EpThisIter      | 55           |
+| EpisodesSoFar   | 1372         |
+| TimeElapsed     | 1.31e+04     |
+| TimestepsSoFar  | 11776        |
+| ev_tdlam_before | 0.863        |
+| loss_ent        | 2.4699934    |
+| loss_kl         | 0.03018899   |
+| loss_pol_entpen | -0.0740998   |
+| loss_pol_surr   | -0.052514434 |
+| loss_vf_loss    | 202.00275    |
+----------------------------------
+********** Iteration 46 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00148 |      -0.07400 |     181.20636 |       0.00074 |       2.46652
+     -0.03871 |      -0.07172 |     164.45163 |       0.01124 |       2.39081
+     -0.05160 |      -0.06977 |     155.40071 |       0.02956 |       2.32567
+     -0.05807 |      -0.07185 |     143.75867 |       0.03747 |       2.39500
+Evaluating losses...
+     -0.05946 |      -0.07326 |     137.45715 |       0.04108 |       2.44190
+----------------------------------
+| EpExecMean      | 0.000878     |
+| EpLenMean       | 4.09         |
+| EpRewMean       | 71.6         |
+| EpThisIter      | 62           |
+| EpisodesSoFar   | 1434         |
+| TimeElapsed     | 1.36e+04     |
+| TimestepsSoFar  | 12030        |
+| ev_tdlam_before | 0.916        |
+| loss_ent        | 2.4419036    |
+| loss_kl         | 0.04107839   |
+| loss_pol_entpen | -0.07325711  |
+| loss_pol_surr   | -0.059455693 |
+| loss_vf_loss    | 137.45715    |
+----------------------------------
+********** Iteration 47 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00014 |      -0.04405 |     200.21558 |       0.01655 |       1.46827
+     -0.00624 |      -0.06847 |     192.72682 |       0.16656 |       2.28239
+     -0.05279 |      -0.05038 |     185.48700 |       0.04173 |       1.67921
+     -0.05442 |      -0.07256 |     179.33923 |       0.25006 |       2.41880
+Evaluating losses...
+     -0.05814 |      -0.08048 |     175.20261 |       0.37530 |       2.68254
+---------------------------------
+| EpExecMean      | 0.00106     |
+| EpLenMean       | 5.83        |
+| EpRewMean       | 66.3        |
+| EpThisIter      | 20          |
+| EpisodesSoFar   | 1454        |
+| TimeElapsed     | 1.38e+04    |
+| TimestepsSoFar  | 12285       |
+| ev_tdlam_before | 0.775       |
+| loss_ent        | 2.6825352   |
+| loss_kl         | 0.3752982   |
+| loss_pol_entpen | -0.08047605 |
+| loss_pol_surr   | -0.05814053 |
+| loss_vf_loss    | 175.2026    |
+---------------------------------
+********** Iteration 48 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00066 |      -0.06092 |     155.24559 |       0.00062 |       2.03066
+     -0.02214 |      -0.05999 |     150.74733 |       0.00828 |       1.99967
+     -0.01950 |      -0.06132 |     144.06007 |       0.02167 |       2.04404
+     -0.04378 |      -0.06605 |     133.95471 |       0.03073 |       2.20183
+Evaluating losses...
+     -0.04965 |      -0.06845 |     127.86237 |       0.04518 |       2.28151
+---------------------------------
+| EpExecMean      | 0.00138     |
+| EpLenMean       | 5.27        |
+| EpRewMean       | 74.5        |
+| EpThisIter      | 75          |
+| EpisodesSoFar   | 1529        |
+| TimeElapsed     | 1.44e+04    |
+| TimestepsSoFar  | 12541       |
+| ev_tdlam_before | 0.963       |
+| loss_ent        | 2.2815094   |
+| loss_kl         | 0.045179073 |
+| loss_pol_entpen | -0.06844528 |
+| loss_pol_surr   | -0.04964573 |
+| loss_vf_loss    | 127.862366  |
+---------------------------------
+********** Iteration 49 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00076 |      -0.08080 |     106.18527 |       0.00529 |       2.69342
+     -0.02435 |      -0.08094 |      82.19615 |       0.01955 |       2.69812
+     -0.05292 |      -0.08103 |      71.71140 |       0.02921 |       2.70097
+     -0.06572 |      -0.08117 |      70.54243 |       0.04642 |       2.70573
+Evaluating losses...
+     -0.07112 |      -0.08226 |      68.46902 |       0.05528 |       2.74206
+---------------------------------
+| EpExecMean      | 0.00101     |
+| EpLenMean       | 3.63        |
+| EpRewMean       | 79.3        |
+| EpThisIter      | 41          |
+| EpisodesSoFar   | 1570        |
+| TimeElapsed     | 1.48e+04    |
+| TimestepsSoFar  | 12714       |
+| ev_tdlam_before | 0.905       |
+| loss_ent        | 2.7420592   |
+| loss_kl         | 0.055281434 |
+| loss_pol_entpen | -0.08226177 |
+| loss_pol_surr   | -0.0711159  |
+| loss_vf_loss    | 68.469025   |
+---------------------------------
+********** Iteration 50 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00629 |      -0.10686 |     185.35771 |       0.00494 |       3.56203
+     -0.03693 |      -0.10322 |     145.82211 |       0.04227 |       3.44051
+     -0.05443 |      -0.10701 |     123.76305 |       0.07194 |       3.56703
+     -0.07375 |      -0.10619 |     111.79565 |       0.09340 |       3.53954
+Evaluating losses...
+     -0.09227 |      -0.10621 |     102.63902 |       0.09344 |       3.54026
+---------------------------------
+| EpExecMean      | 0.001       |
+| EpLenMean       | 6.13        |
+| EpRewMean       | 77.8        |
+| EpThisIter      | 9           |
+| EpisodesSoFar   | 1579        |
+| TimeElapsed     | 1.49e+04    |
+| TimestepsSoFar  | 12997       |
+| ev_tdlam_before | 0.781       |
+| loss_ent        | 3.5402615   |
+| loss_kl         | 0.09343585  |
+| loss_pol_entpen | -0.10620785 |
+| loss_pol_surr   | -0.09226672 |
+| loss_vf_loss    | 102.63902   |
+---------------------------------
+********** Iteration 51 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00171 |      -0.11676 |     213.98654 |       0.00960 |       3.89212
+     -0.01953 |      -0.11643 |      99.75868 |       0.04832 |       3.88098
+     -0.03495 |      -0.11712 |      38.75660 |       0.05222 |       3.90387
+     -0.03656 |      -0.11639 |      10.99843 |       0.05975 |       3.87972
+Evaluating losses...
+     -0.05093 |      -0.11602 |       8.27937 |       0.06173 |       3.86729
+----------------------------------
+| EpExecMean      | 0.001        |
+| EpLenMean       | 6.13         |
+| EpRewMean       | 77.8         |
+| EpThisIter      | 0            |
+| EpisodesSoFar   | 1579         |
+| TimeElapsed     | 1.49e+04     |
+| TimestepsSoFar  | 12997        |
+| ev_tdlam_before | -0.05        |
+| loss_ent        | 3.867288     |
+| loss_kl         | 0.061727524  |
+| loss_pol_entpen | -0.11601864  |
+| loss_pol_surr   | -0.050926425 |
+| loss_vf_loss    | 8.279367     |
+----------------------------------
+********** Iteration 52 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00062 |      -0.09151 |     152.27594 |       0.00384 |       3.05035
+     -0.01494 |      -0.09338 |     132.99280 |       0.02128 |       3.11264
+     -0.01823 |      -0.09570 |     104.75615 |       0.04823 |       3.19016
+     -0.02241 |      -0.09652 |      92.03040 |       0.06080 |       3.21720
+Evaluating losses...
+     -0.02534 |      -0.09664 |      83.73224 |       0.06170 |       3.22125
+----------------------------------
+| EpExecMean      | 0.000876     |
+| EpLenMean       | 10.8         |
+| EpRewMean       | 71.8         |
+| EpThisIter      | 18           |
+| EpisodesSoFar   | 1597         |
+| TimeElapsed     | 1.5e+04      |
+| TimestepsSoFar  | 13534        |
+| ev_tdlam_before | 0.916        |
+| loss_ent        | 3.2212477    |
+| loss_kl         | 0.061701033  |
+| loss_pol_entpen | -0.09663743  |
+| loss_pol_surr   | -0.025337372 |
+| loss_vf_loss    | 83.73224     |
+----------------------------------
+********** Iteration 53 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00662 |      -0.07969 |     217.89340 |       0.00832 |       2.65629
+     -0.00168 |      -0.08222 |     146.96866 |       0.01440 |       2.74053
+     -0.01381 |      -0.08205 |      98.77849 |       0.01629 |       2.73513
+     -0.00873 |      -0.08479 |      75.36175 |       0.04161 |       2.82631
+Evaluating losses...
+     -0.01165 |      -0.08969 |      70.68034 |       0.07544 |       2.98976
+----------------------------------
+| EpExecMean      | 0.0014       |
+| EpLenMean       | 13           |
+| EpRewMean       | 63.8         |
+| EpThisIter      | 23           |
+| EpisodesSoFar   | 1620         |
+| TimeElapsed     | 1.52e+04     |
+| TimestepsSoFar  | 13821        |
+| ev_tdlam_before | 0.83         |
+| loss_ent        | 2.9897556    |
+| loss_kl         | 0.075440116  |
+| loss_pol_entpen | -0.089692675 |
+| loss_pol_surr   | -0.011645    |
+| loss_vf_loss    | 70.68034     |
+----------------------------------
+********** Iteration 54 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00020 |      -0.08380 |      90.12099 |       0.00111 |       2.79345
+     -0.03106 |      -0.08482 |      82.67978 |       0.01472 |       2.82735
+     -0.05197 |      -0.08434 |      81.86063 |       0.02630 |       2.81120
+     -0.05663 |      -0.08525 |      79.01236 |       0.03485 |       2.84165
+Evaluating losses...
+     -0.06686 |      -0.08578 |      76.77713 |       0.04261 |       2.85936
+----------------------------------
+| EpExecMean      | 0.00159      |
+| EpLenMean       | 13.6         |
+| EpRewMean       | 60.9         |
+| EpThisIter      | 50           |
+| EpisodesSoFar   | 1670         |
+| TimeElapsed     | 1.57e+04     |
+| TimestepsSoFar  | 14075        |
+| ev_tdlam_before | 0.93         |
+| loss_ent        | 2.8593602    |
+| loss_kl         | 0.042613655  |
+| loss_pol_entpen | -0.08578081  |
+| loss_pol_surr   | -0.066864714 |
+| loss_vf_loss    | 76.77713     |
+----------------------------------
+********** Iteration 55 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00243 |      -0.08523 |     109.61768 |       0.00124 |       2.84110
+     -0.02153 |      -0.08389 |     108.53288 |       0.01237 |       2.79621
+     -0.03062 |      -0.08181 |     107.75798 |       0.03390 |       2.72707
+     -0.03551 |      -0.08146 |     106.72548 |       0.04383 |       2.71533
+Evaluating losses...
+     -0.03926 |      -0.08202 |     106.13387 |       0.04474 |       2.73410
+----------------------------------
+| EpExecMean      | 0.0013       |
+| EpLenMean       | 6.09         |
+| EpRewMean       | 68.9         |
+| EpThisIter      | 40           |
+| EpisodesSoFar   | 1710         |
+| TimeElapsed     | 1.61e+04     |
+| TimestepsSoFar  | 14335        |
+| ev_tdlam_before | 0.893        |
+| loss_ent        | 2.7340963    |
+| loss_kl         | 0.044738594  |
+| loss_pol_entpen | -0.08202289  |
+| loss_pol_surr   | -0.039261658 |
+| loss_vf_loss    | 106.13387    |
+----------------------------------
+********** Iteration 56 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00121 |      -0.09425 |     137.22646 |       0.00104 |       3.14162
+     -0.05072 |      -0.09416 |      93.12901 |       0.00961 |       3.13866
+     -0.06882 |      -0.09362 |      88.10320 |       0.02531 |       3.12072
+     -0.07389 |      -0.09317 |      77.54716 |       0.03751 |       3.10552
+Evaluating losses...
+     -0.07552 |      -0.09302 |      73.99608 |       0.04340 |       3.10077
+----------------------------------
+| EpExecMean      | 0.00108      |
+| EpLenMean       | 5.69         |
+| EpRewMean       | 76.9         |
+| EpThisIter      | 29           |
+| EpisodesSoFar   | 1739         |
+| TimeElapsed     | 1.64e+04     |
+| TimestepsSoFar  | 14501        |
+| ev_tdlam_before | 0.839        |
+| loss_ent        | 3.1007686    |
+| loss_kl         | 0.04340229   |
+| loss_pol_entpen | -0.09302306  |
+| loss_pol_surr   | -0.075515576 |
+| loss_vf_loss    | 73.99608     |
+----------------------------------
+********** Iteration 57 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00213 |      -0.10796 |     203.03351 |       0.00119 |       3.59874
+     -0.04039 |      -0.10739 |      76.75031 |       0.01069 |       3.57983
+     -0.06008 |      -0.10811 |      24.95646 |       0.02451 |       3.60353
+     -0.06406 |      -0.10901 |      24.48831 |       0.04036 |       3.63374
+Evaluating losses...
+     -0.07311 |      -0.10905 |      24.43936 |       0.04853 |       3.63511
+---------------------------------
+| EpExecMean      | 0.00108     |
+| EpLenMean       | 8.52        |
+| EpRewMean       | 73.7        |
+| EpThisIter      | 5           |
+| EpisodesSoFar   | 1744        |
+| TimeElapsed     | 1.65e+04    |
+| TimestepsSoFar  | 14814       |
+| ev_tdlam_before | 0.599       |
+| loss_ent        | 3.6351051   |
+| loss_kl         | 0.048531935 |
+| loss_pol_entpen | -0.10905315 |
+| loss_pol_surr   | -0.07311398 |
+| loss_vf_loss    | 24.439358   |
+---------------------------------
+********** Iteration 58 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00400 |      -0.11187 |     123.19300 |       0.00234 |       3.72896
+     -0.03906 |      -0.11161 |      68.91134 |       0.01431 |       3.72027
+     -0.04491 |      -0.11045 |      28.73410 |       0.03757 |       3.68156
+     -0.05265 |      -0.11021 |      25.14060 |       0.05084 |       3.67360
+Evaluating losses...
+     -0.05692 |      -0.11027 |      25.43382 |       0.05642 |       3.67562
+----------------------------------
+| EpExecMean      | 0.00109      |
+| EpLenMean       | 9.34         |
+| EpRewMean       | 70.9         |
+| EpThisIter      | 6            |
+| EpisodesSoFar   | 1750         |
+| TimeElapsed     | 1.66e+04     |
+| TimestepsSoFar  | 14917        |
+| ev_tdlam_before | 0.906        |
+| loss_ent        | 3.6756227    |
+| loss_kl         | 0.0564188    |
+| loss_pol_entpen | -0.11026868  |
+| loss_pol_surr   | -0.056917552 |
+| loss_vf_loss    | 25.433815    |
+----------------------------------
+********** Iteration 59 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00960 |      -0.11295 |     117.36261 |       0.00430 |       3.76496
+     -0.01798 |      -0.11055 |      59.43623 |       0.03301 |       3.68492
+     -0.02139 |      -0.10970 |      22.56321 |       0.05805 |       3.65662
+     -0.02088 |      -0.11091 |       5.43787 |       0.07077 |       3.69704
+Evaluating losses...
+     -0.02148 |      -0.11150 |       5.52380 |       0.07037 |       3.71672
+---------------------------------
+| EpExecMean      | 0.00109     |
+| EpLenMean       | 9.34        |
+| EpRewMean       | 70.9        |
+| EpThisIter      | 0           |
+| EpisodesSoFar   | 1750        |
+| TimeElapsed     | 1.66e+04    |
+| TimestepsSoFar  | 14917       |
+| ev_tdlam_before | -0.0162     |
+| loss_ent        | 3.7167244   |
+| loss_kl         | 0.07037267  |
+| loss_pol_entpen | -0.11150172 |
+| loss_pol_surr   | -0.02148431 |
+| loss_vf_loss    | 5.523804    |
+---------------------------------
+********** Iteration 60 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00051 |      -0.08705 |     351.59686 |       0.00167 |       2.90154
+     -0.03225 |      -0.08873 |     189.18024 |       0.01729 |       2.95775
+     -0.04875 |      -0.08929 |     150.52133 |       0.04404 |       2.97626
+     -0.06165 |      -0.08876 |     130.96078 |       0.06608 |       2.95875
+Evaluating losses...
+     -0.07018 |      -0.08867 |     124.89639 |       0.07914 |       2.95581
+----------------------------------
+| EpExecMean      | 0.0012       |
+| EpLenMean       | 14.4         |
+| EpRewMean       | 69.3         |
+| EpThisIter      | 35           |
+| EpisodesSoFar   | 1785         |
+| TimeElapsed     | 1.69e+04     |
+| TimestepsSoFar  | 15612        |
+| ev_tdlam_before | 0.809        |
+| loss_ent        | 2.9558053    |
+| loss_kl         | 0.079138614  |
+| loss_pol_entpen | -0.08867416  |
+| loss_pol_surr   | -0.070179395 |
+| loss_vf_loss    | 124.896385   |
+----------------------------------
+********** Iteration 61 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00941 |      -0.07367 |      91.25299 |       0.00442 |       2.45559
+     -0.00981 |      -0.07658 |      81.61252 |       0.00808 |       2.55265
+     -0.02299 |      -0.07539 |      74.30742 |       0.01271 |       2.51314
+     -0.03147 |      -0.07720 |      67.97672 |       0.02623 |       2.57346
+Evaluating losses...
+     -0.03412 |      -0.07875 |      64.32793 |       0.03610 |       2.62507
+---------------------------------
+| EpExecMean      | 0.00161     |
+| EpLenMean       | 14.3        |
+| EpRewMean       | 63.7        |
+| EpThisIter      | 43          |
+| EpisodesSoFar   | 1828        |
+| TimeElapsed     | 1.72e+04    |
+| TimestepsSoFar  | 15871       |
+| ev_tdlam_before | 0.91        |
+| loss_ent        | 2.6250668   |
+| loss_kl         | 0.036096342 |
+| loss_pol_entpen | -0.078752   |
+| loss_pol_surr   | -0.03412272 |
+| loss_vf_loss    | 64.327934   |
+---------------------------------
+********** Iteration 62 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00377 |      -0.07588 |      85.81963 |       0.00124 |       2.52946
+     -0.01272 |      -0.07502 |      85.01642 |       0.00910 |       2.50051
+     -0.01255 |      -0.07634 |      82.23590 |       0.02226 |       2.54463
+     -0.03868 |      -0.07618 |      81.22276 |       0.03458 |       2.53918
+Evaluating losses...
+     -0.02165 |      -0.07498 |      80.73660 |       0.04986 |       2.49931
+----------------------------------
+| EpExecMean      | 0.00196      |
+| EpLenMean       | 5.37         |
+| EpRewMean       | 67.1         |
+| EpThisIter      | 53           |
+| EpisodesSoFar   | 1881         |
+| TimeElapsed     | 1.76e+04     |
+| TimestepsSoFar  | 16128        |
+| ev_tdlam_before | 0.935        |
+| loss_ent        | 2.4993122    |
+| loss_kl         | 0.04985982   |
+| loss_pol_entpen | -0.074979365 |
+| loss_pol_surr   | -0.021652535 |
+| loss_vf_loss    | 80.736595    |
+----------------------------------
+********** Iteration 63 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00139 |      -0.08370 |      79.28333 |       0.00348 |       2.78984
+     -0.01213 |      -0.08164 |      75.48802 |       0.02402 |       2.72129
+     -0.01995 |      -0.07950 |      72.96408 |       0.04505 |       2.64993
+     -0.02237 |      -0.07840 |      71.80695 |       0.06418 |       2.61342
+Evaluating losses...
+     -0.02371 |      -0.07835 |      70.11790 |       0.06924 |       2.61155
+----------------------------------
+| EpExecMean      | 0.00171      |
+| EpLenMean       | 5.91         |
+| EpRewMean       | 65.4         |
+| EpThisIter      | 33           |
+| EpisodesSoFar   | 1914         |
+| TimeElapsed     | 1.8e+04      |
+| TimestepsSoFar  | 16379        |
+| ev_tdlam_before | 0.9          |
+| loss_ent        | 2.611548     |
+| loss_kl         | 0.069238156  |
+| loss_pol_entpen | -0.078346446 |
+| loss_pol_surr   | -0.023705456 |
+| loss_vf_loss    | 70.117905    |
+----------------------------------
+********** Iteration 64 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00089 |      -0.01306 |     209.20151 |       0.00035 |       0.43526
+     -0.00781 |      -0.01295 |     100.63991 |       0.00292 |       0.43182
+     -0.02280 |      -0.01322 |      24.90878 |       0.00575 |       0.44077
+     -0.02893 |      -0.01436 |      24.88954 |       0.01280 |       0.47856
+Evaluating losses...
+     -0.03285 |      -0.01577 |      23.38797 |       0.01897 |       0.52560
+----------------------------------
+| EpExecMean      | 0.00155      |
+| EpLenMean       | 5.69         |
+| EpRewMean       | 65.5         |
+| EpThisIter      | 7            |
+| EpisodesSoFar   | 1921         |
+| TimeElapsed     | 1.8e+04      |
+| TimestepsSoFar  | 16415        |
+| ev_tdlam_before | 0.773        |
+| loss_ent        | 0.5255973    |
+| loss_kl         | 0.018974805  |
+| loss_pol_entpen | -0.015767917 |
+| loss_pol_surr   | -0.032854043 |
+| loss_vf_loss    | 23.387966    |
+----------------------------------
+********** Iteration 65 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00056 |      -0.05775 |     126.20740 |       0.00116 |       1.92493
+     -0.02618 |      -0.05549 |     109.99126 |       0.00876 |       1.84958
+     -0.03550 |      -0.05416 |     107.49337 |       0.01639 |       1.80520
+     -0.04058 |      -0.05520 |     105.18073 |       0.01718 |       1.84016
+Evaluating losses...
+     -0.04501 |      -0.05640 |     103.32582 |       0.01672 |       1.87998
+---------------------------------
+| EpExecMean      | 0.00119     |
+| EpLenMean       | 7.96        |
+| EpRewMean       | 70.1        |
+| EpThisIter      | 54          |
+| EpisodesSoFar   | 1975        |
+| TimeElapsed     | 1.85e+04    |
+| TimestepsSoFar  | 16895       |
+| ev_tdlam_before | 0.946       |
+| loss_ent        | 1.8799813   |
+| loss_kl         | 0.016715351 |
+| loss_pol_entpen | -0.05639944 |
+| loss_pol_surr   | -0.04501113 |
+| loss_vf_loss    | 103.32582   |
+---------------------------------
+********** Iteration 66 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00028 |      -0.06920 |      96.13608 |       0.00115 |       2.30664
+     -0.02651 |      -0.06881 |      89.95455 |       0.01087 |       2.29381
+     -0.04204 |      -0.06956 |      85.53843 |       0.02322 |       2.31861
+     -0.05029 |      -0.07035 |      81.02305 |       0.03929 |       2.34496
+Evaluating losses...
+     -0.05685 |      -0.07032 |      80.09449 |       0.05053 |       2.34396
+----------------------------------
+| EpExecMean      | 0.000949     |
+| EpLenMean       | 4.5          |
+| EpRewMean       | 77.1         |
+| EpThisIter      | 48           |
+| EpisodesSoFar   | 2023         |
+| TimeElapsed     | 1.89e+04     |
+| TimestepsSoFar  | 17141        |
+| ev_tdlam_before | 0.923        |
+| loss_ent        | 2.3439603    |
+| loss_kl         | 0.0505342    |
+| loss_pol_entpen | -0.07031882  |
+| loss_pol_surr   | -0.056849822 |
+| loss_vf_loss    | 80.09449     |
+----------------------------------
+********** Iteration 67 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.02739 |      -0.04961 |      76.04518 |       0.00678 |       1.65369
+     -0.00547 |      -0.04434 |      74.66138 |       0.00711 |       1.47794
+      0.00353 |      -0.04897 |      71.46273 |       0.04427 |       1.63249
+     -0.03150 |      -0.04551 |      64.08009 |       0.02757 |       1.51699
+Evaluating losses...
+     -0.02056 |      -0.04327 |      58.36398 |       0.03820 |       1.44249
+----------------------------------
+| EpExecMean      | 0.00123      |
+| EpLenMean       | 4.97         |
+| EpRewMean       | 77.3         |
+| EpThisIter      | 55           |
+| EpisodesSoFar   | 2078         |
+| TimeElapsed     | 1.93e+04     |
+| TimestepsSoFar  | 17406        |
+| ev_tdlam_before | 0.958        |
+| loss_ent        | 1.4424914    |
+| loss_kl         | 0.038201     |
+| loss_pol_entpen | -0.043274738 |
+| loss_pol_surr   | -0.020555772 |
+| loss_vf_loss    | 58.363983    |
+----------------------------------
+********** Iteration 68 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.01447 |      -0.05365 |      66.14378 |       0.00594 |       1.78849
+     -0.01258 |      -0.06073 |      60.14992 |       0.08666 |       2.02442
+     -0.04899 |      -0.06636 |      55.03606 |       0.15373 |       2.21198
+     -0.06361 |      -0.06894 |      50.86479 |       0.28891 |       2.29806
+Evaluating losses...
+     -0.06677 |      -0.06833 |      48.47482 |       0.38738 |       2.27751
+---------------------------------
+| EpExecMean      | 0.00126     |
+| EpLenMean       | 4.35        |
+| EpRewMean       | 73.7        |
+| EpThisIter      | 58          |
+| EpisodesSoFar   | 2136        |
+| TimeElapsed     | 1.97e+04    |
+| TimestepsSoFar  | 17662       |
+| ev_tdlam_before | 0.962       |
+| loss_ent        | 2.2775106   |
+| loss_kl         | 0.38737774  |
+| loss_pol_entpen | -0.06832531 |
+| loss_pol_surr   | -0.06676858 |
+| loss_vf_loss    | 48.474815   |
+---------------------------------
+********** Iteration 69 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.02337 |      -0.05134 |     271.24414 |       0.00247 |       1.71127
+     -0.03504 |      -0.05268 |     226.25528 |       0.00671 |       1.75614
+     -0.03589 |      -0.05494 |     192.69012 |       0.02454 |       1.83123
+     -0.04842 |      -0.05528 |     172.70950 |       0.03398 |       1.84258
+Evaluating losses...
+     -0.05400 |      -0.05531 |     160.67497 |       0.03402 |       1.84375
+----------------------------------
+| EpExecMean      | 0.00161      |
+| EpLenMean       | 2.69         |
+| EpRewMean       | 75.4         |
+| EpThisIter      | 95           |
+| EpisodesSoFar   | 2231         |
+| TimeElapsed     | 2.03e+04     |
+| TimestepsSoFar  | 17919        |
+| ev_tdlam_before | 0.911        |
+| loss_ent        | 1.8437542    |
+| loss_kl         | 0.034021683  |
+| loss_pol_entpen | -0.055312622 |
+| loss_pol_surr   | -0.05399639  |
+| loss_vf_loss    | 160.67497    |
+----------------------------------
+********** Iteration 70 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00034 |      -0.10048 |     104.30240 |       0.00220 |       3.34921
+     -0.02501 |      -0.09909 |      55.69213 |       0.01625 |       3.30299
+     -0.04565 |      -0.09966 |      30.16206 |       0.02455 |       3.32202
+     -0.05336 |      -0.10060 |      20.19036 |       0.04099 |       3.35340
+Evaluating losses...
+     -0.06339 |      -0.10068 |      22.06225 |       0.05357 |       3.35612
+---------------------------------
+| EpExecMean      | 0.00161     |
+| EpLenMean       | 2.68        |
+| EpRewMean       | 74.4        |
+| EpThisIter      | 11          |
+| EpisodesSoFar   | 2242        |
+| TimeElapsed     | 2.04e+04    |
+| TimestepsSoFar  | 17948       |
+| ev_tdlam_before | 0.909       |
+| loss_ent        | 3.356123    |
+| loss_kl         | 0.053565145 |
+| loss_pol_entpen | -0.10068368 |
+| loss_pol_surr   | -0.06338553 |
+| loss_vf_loss    | 22.062248   |
+---------------------------------
+********** Iteration 71 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00259 |      -0.06955 |      92.06033 |       0.00777 |       2.31824
+     -0.01875 |      -0.07028 |      78.44636 |       0.05024 |       2.34267
+     -0.02870 |      -0.07006 |      71.70845 |       0.07672 |       2.33539
+     -0.03484 |      -0.06973 |      65.60480 |       0.08881 |       2.32422
+Evaluating losses...
+     -0.04180 |      -0.06961 |      63.84816 |       0.09547 |       2.32045
+----------------------------------
+| EpExecMean      | 0.0023       |
+| EpLenMean       | 5.98         |
+| EpRewMean       | 75.3         |
+| EpThisIter      | 61           |
+| EpisodesSoFar   | 2303         |
+| TimeElapsed     | 2.08e+04     |
+| TimestepsSoFar  | 18429        |
+| ev_tdlam_before | 0.953        |
+| loss_ent        | 2.3204541    |
+| loss_kl         | 0.095472716  |
+| loss_pol_entpen | -0.06961362  |
+| loss_pol_surr   | -0.041799985 |
+| loss_vf_loss    | 63.848164    |
+----------------------------------
+********** Iteration 72 ************
+- best, reward: 1.155206, exec: 0.000402146, duration: 5:56:36.630021, schedule: blur_y.gpu_tile(x, y, xi, yi, 64, 8); blur_y.unroll(yi, 4); blur_y.unroll(xi, 2); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00338 |      -0.04824 |     135.98735 |       0.00034 |       1.60784
+     -0.00647 |      -0.05009 |     103.82909 |       0.00745 |       1.66971
+     -0.01097 |      -0.05157 |      84.33353 |       0.01587 |       1.71909
+     -0.00701 |      -0.05288 |      87.06255 |       0.02106 |       1.76261
+Evaluating losses...
+     -0.03369 |      -0.05432 |      85.12838 |       0.03045 |       1.81076
+----------------------------------
+| EpExecMean      | 0.00132      |
+| EpLenMean       | 2.55         |
+| EpRewMean       | 65           |
+| EpThisIter      | 101          |
+| EpisodesSoFar   | 2404         |
+| TimeElapsed     | 2.15e+04     |
+| TimestepsSoFar  | 18688        |
+| ev_tdlam_before | 0.933        |
+| loss_ent        | 1.8107576    |
+| loss_kl         | 0.03045239   |
+| loss_pol_entpen | -0.054322727 |
+| loss_pol_surr   | -0.03368936  |
+| loss_vf_loss    | 85.12838     |
+----------------------------------
+********** Iteration 73 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.01176 |      -0.05907 |     124.84313 |       0.00284 |       1.96913
+     -0.01288 |      -0.06076 |      70.47522 |       0.01741 |       2.02531
+     -0.03023 |      -0.06063 |      86.84430 |       0.04230 |       2.02107
+     -0.03930 |      -0.06054 |      80.65457 |       0.05545 |       2.01797
+Evaluating losses...
+     -0.03733 |      -0.05895 |      71.29156 |       0.04295 |       1.96497
+---------------------------------
+| EpExecMean      | 0.00124     |
+| EpLenMean       | 3.53        |
+| EpRewMean       | 74.9        |
+| EpThisIter      | 60          |
+| EpisodesSoFar   | 2464        |
+| TimeElapsed     | 2.19e+04    |
+| TimestepsSoFar  | 18943       |
+| ev_tdlam_before | 0.862       |
+| loss_ent        | 1.9649736   |
+| loss_kl         | 0.042952333 |
+| loss_pol_entpen | -0.05894921 |
+| loss_pol_surr   | -0.0373314  |
+| loss_vf_loss    | 71.291565   |
+---------------------------------
+********** Iteration 74 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00224 |      -0.05491 |      50.22306 |       0.00200 |       1.83018
+     -0.01824 |      -0.05337 |      48.06921 |       0.00706 |       1.77891
+     -0.02835 |      -0.05253 |      46.53202 |       0.01289 |       1.75105
+     -0.03805 |      -0.05748 |      44.79027 |       0.03077 |       1.91606
+Evaluating losses...
+     -0.03405 |      -0.06123 |      43.68310 |       0.05882 |       2.04088
+----------------------------------
+| EpExecMean      | 0.00157      |
+| EpLenMean       | 3.08         |
+| EpRewMean       | 73.4         |
+| EpThisIter      | 84           |
+| EpisodesSoFar   | 2548         |
+| TimeElapsed     | 2.25e+04     |
+| TimestepsSoFar  | 19199        |
+| ev_tdlam_before | 0.975        |
+| loss_ent        | 2.0408804    |
+| loss_kl         | 0.05881748   |
+| loss_pol_entpen | -0.061226416 |
+| loss_pol_surr   | -0.034052134 |
+| loss_vf_loss    | 43.683098    |
+----------------------------------
+********** Iteration 75 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00328 |      -0.06162 |      49.13398 |       0.00299 |       2.05408
+     -0.01265 |      -0.06165 |      47.08651 |       0.01996 |       2.05495
+     -0.02693 |      -0.06098 |      44.05820 |       0.05307 |       2.03256
+     -0.03178 |      -0.06003 |      40.64159 |       0.08537 |       2.00106
+Evaluating losses...
+     -0.03456 |      -0.05977 |      38.51410 |       0.09464 |       1.99247
+----------------------------------
+| EpExecMean      | 0.00181      |
+| EpLenMean       | 3.65         |
+| EpRewMean       | 78.4         |
+| EpThisIter      | 66           |
+| EpisodesSoFar   | 2614         |
+| TimeElapsed     | 2.3e+04      |
+| TimestepsSoFar  | 19454        |
+| ev_tdlam_before | 0.97         |
+| loss_ent        | 1.9924705    |
+| loss_kl         | 0.094643146  |
+| loss_pol_entpen | -0.059774112 |
+| loss_pol_surr   | -0.03455554  |
+| loss_vf_loss    | 38.514095    |
+----------------------------------
+********** Iteration 76 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00156 |      -0.05960 |      45.13535 |       0.00064 |       1.98665
+     -0.01063 |      -0.06004 |      42.83648 |       0.00727 |       2.00125
+     -0.02684 |      -0.06015 |      41.20261 |       0.01298 |       2.00486
+     -0.02707 |      -0.06057 |      37.30166 |       0.02019 |       2.01890
+Evaluating losses...
+     -0.03389 |      -0.06152 |      36.47684 |       0.02497 |       2.05066
+----------------------------------
+| EpExecMean      | 0.00208      |
+| EpLenMean       | 3.83         |
+| EpRewMean       | 74           |
+| EpThisIter      | 68           |
+| EpisodesSoFar   | 2682         |
+| TimeElapsed     | 2.35e+04     |
+| TimestepsSoFar  | 19708        |
+| ev_tdlam_before | 0.971        |
+| loss_ent        | 2.050663     |
+| loss_kl         | 0.024965664  |
+| loss_pol_entpen | -0.061519884 |
+| loss_pol_surr   | -0.03389284  |
+| loss_vf_loss    | 36.476845    |
+----------------------------------
+********** Iteration 77 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00490 |      -0.06233 |      15.95013 |       0.00141 |       2.07764
+      0.00076 |      -0.06053 |      15.30389 |       0.00560 |       2.01780
+     -0.02096 |      -0.05915 |      13.33698 |       0.01814 |       1.97155
+     -0.02669 |      -0.05871 |      11.68331 |       0.03214 |       1.95706
+Evaluating losses...
+     -0.04725 |      -0.05880 |      11.12189 |       0.03032 |       1.96015
+----------------------------------
+| EpExecMean      | 0.00154      |
+| EpLenMean       | 3.79         |
+| EpRewMean       | 63.9         |
+| EpThisIter      | 68           |
+| EpisodesSoFar   | 2750         |
+| TimeElapsed     | 2.4e+04      |
+| TimestepsSoFar  | 19965        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.9601475    |
+| loss_kl         | 0.030315135  |
+| loss_pol_entpen | -0.058804426 |
+| loss_pol_surr   | -0.04724711  |
+| loss_vf_loss    | 11.121895    |
+----------------------------------
+********** Iteration 78 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.01287 |      -0.06384 |      30.01368 |       0.00406 |       2.12806
+     -0.02409 |      -0.06124 |      28.42273 |       0.01422 |       2.04129
+     -0.02117 |      -0.05899 |      25.68184 |       0.03621 |       1.96649
+     -0.04170 |      -0.05973 |      24.57153 |       0.03323 |       1.99115
+Evaluating losses...
+     -0.02586 |      -0.06041 |      23.18871 |       0.03048 |       2.01376
+----------------------------------
+| EpExecMean      | 0.00207      |
+| EpLenMean       | 3.84         |
+| EpRewMean       | 67.3         |
+| EpThisIter      | 67           |
+| EpisodesSoFar   | 2817         |
+| TimeElapsed     | 2.45e+04     |
+| TimestepsSoFar  | 20220        |
+| ev_tdlam_before | 0.98         |
+| loss_ent        | 2.0137596    |
+| loss_kl         | 0.030479021  |
+| loss_pol_entpen | -0.060412783 |
+| loss_pol_surr   | -0.02585547  |
+| loss_vf_loss    | 23.188713    |
+----------------------------------
+********** Iteration 79 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00376 |      -0.05753 |      34.49897 |       0.00263 |       1.91769
+     -0.01764 |      -0.05514 |      30.06024 |       0.02002 |       1.83796
+     -0.02512 |      -0.05319 |      27.02798 |       0.02722 |       1.77304
+     -0.03420 |      -0.05206 |      24.60340 |       0.02732 |       1.73539
+Evaluating losses...
+     -0.03565 |      -0.05206 |      23.68541 |       0.02744 |       1.73539
+----------------------------------
+| EpExecMean      | 0.00153      |
+| EpLenMean       | 3.49         |
+| EpRewMean       | 65.7         |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 2890         |
+| TimeElapsed     | 2.5e+04      |
+| TimestepsSoFar  | 20467        |
+| ev_tdlam_before | 0.978        |
+| loss_ent        | 1.7353903    |
+| loss_kl         | 0.027441949  |
+| loss_pol_entpen | -0.052061703 |
+| loss_pol_surr   | -0.035647515 |
+| loss_vf_loss    | 23.685413    |
+----------------------------------
+********** Iteration 80 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00140 |      -0.05005 |      25.92055 |       0.00081 |       1.66827
+     -0.01551 |      -0.04837 |      25.36861 |       0.01805 |       1.61236
+     -0.01876 |      -0.04722 |      24.79931 |       0.02651 |       1.57402
+     -0.02802 |      -0.04750 |      24.27372 |       0.02209 |       1.58348
+Evaluating losses...
+     -0.02761 |      -0.04788 |      24.02240 |       0.02496 |       1.59602
+----------------------------------
+| EpExecMean      | 0.00218      |
+| EpLenMean       | 3.26         |
+| EpRewMean       | 64.3         |
+| EpThisIter      | 84           |
+| EpisodesSoFar   | 2974         |
+| TimeElapsed     | 2.56e+04     |
+| TimestepsSoFar  | 20734        |
+| ev_tdlam_before | 0.987        |
+| loss_ent        | 1.5960157    |
+| loss_kl         | 0.024957351  |
+| loss_pol_entpen | -0.047880467 |
+| loss_pol_surr   | -0.027606502 |
+| loss_vf_loss    | 24.022404    |
+----------------------------------
+********** Iteration 81 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00372 |      -0.04248 |      20.74478 |       0.00052 |       1.41605
+     -0.00262 |      -0.04326 |      20.28130 |       0.01028 |       1.44201
+     -0.00562 |      -0.04467 |      19.60509 |       0.01916 |       1.48889
+     -0.01105 |      -0.04648 |      19.15193 |       0.02532 |       1.54949
+Evaluating losses...
+     -0.01682 |      -0.04743 |      18.67060 |       0.03273 |       1.58112
+----------------------------------
+| EpExecMean      | 0.00108      |
+| EpLenMean       | 2.67         |
+| EpRewMean       | 70.4         |
+| EpThisIter      | 97           |
+| EpisodesSoFar   | 3071         |
+| TimeElapsed     | 2.63e+04     |
+| TimestepsSoFar  | 20990        |
+| ev_tdlam_before | 0.993        |
+| loss_ent        | 1.5811214    |
+| loss_kl         | 0.032731187  |
+| loss_pol_entpen | -0.04743364  |
+| loss_pol_surr   | -0.016818503 |
+| loss_vf_loss    | 18.670603    |
+----------------------------------
+********** Iteration 82 ************
+- best, reward: 1.445912, exec: 0.000401308, duration: 7:24:30.286711, schedule: blur_y.gpu_tile(x, y, xi, yi, 128, 8); blur_y.unroll(xi, 2); blur_y.unroll(yi, 4); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00414 |      -0.05687 |      17.97206 |       0.00172 |       1.89559
+     -0.02419 |      -0.05595 |      17.46552 |       0.01629 |       1.86493
+     -0.02689 |      -0.05508 |      16.84666 |       0.02356 |       1.83587
+     -0.04053 |      -0.05496 |      16.22058 |       0.01933 |       1.83197
+Evaluating losses...
+     -0.04315 |      -0.05466 |      15.87117 |       0.02485 |       1.82197
+----------------------------------
+| EpExecMean      | 0.00169      |
+| EpLenMean       | 3.46         |
+| EpRewMean       | 67.8         |
+| EpThisIter      | 66           |
+| EpisodesSoFar   | 3137         |
+| TimeElapsed     | 2.69e+04     |
+| TimestepsSoFar  | 21248        |
+| ev_tdlam_before | 0.988        |
+| loss_ent        | 1.8219702    |
+| loss_kl         | 0.024851102  |
+| loss_pol_entpen | -0.054659102 |
+| loss_pol_surr   | -0.043153517 |
+| loss_vf_loss    | 15.871173    |
+----------------------------------
+********** Iteration 83 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00511 |      -0.04550 |      27.60588 |       0.00127 |       1.51680
+     -0.01324 |      -0.04505 |      27.12224 |       0.00965 |       1.50156
+     -0.01673 |      -0.04658 |      26.36355 |       0.01932 |       1.55265
+     -0.02278 |      -0.04958 |      25.07014 |       0.02528 |       1.65261
+Evaluating losses...
+     -0.03355 |      -0.05089 |      24.47862 |       0.02755 |       1.69637
+----------------------------------
+| EpExecMean      | 0.00187      |
+| EpLenMean       | 2.82         |
+| EpRewMean       | 69.8         |
+| EpThisIter      | 91           |
+| EpisodesSoFar   | 3228         |
+| TimeElapsed     | 2.76e+04     |
+| TimestepsSoFar  | 21504        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.6963718    |
+| loss_kl         | 0.027554639  |
+| loss_pol_entpen | -0.050891154 |
+| loss_pol_surr   | -0.03355083  |
+| loss_vf_loss    | 24.47862     |
+----------------------------------
+********** Iteration 84 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00054 |      -0.05050 |      12.52087 |       0.00158 |       1.68326
+     -0.01433 |      -0.04786 |      11.87103 |       0.00999 |       1.59542
+     -0.02130 |      -0.04566 |      11.34979 |       0.01719 |       1.52196
+     -0.02497 |      -0.04509 |      10.92259 |       0.02181 |       1.50286
+Evaluating losses...
+     -0.02579 |      -0.04540 |      10.66846 |       0.02267 |       1.51318
+----------------------------------
+| EpExecMean      | 0.00117      |
+| EpLenMean       | 3.27         |
+| EpRewMean       | 75           |
+| EpThisIter      | 77           |
+| EpisodesSoFar   | 3305         |
+| TimeElapsed     | 2.82e+04     |
+| TimestepsSoFar  | 21759        |
+| ev_tdlam_before | 0.994        |
+| loss_ent        | 1.5131823    |
+| loss_kl         | 0.022674927  |
+| loss_pol_entpen | -0.045395464 |
+| loss_pol_surr   | -0.025790779 |
+| loss_vf_loss    | 10.668462    |
+----------------------------------
+********** Iteration 85 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00178 |      -0.04416 |      15.01346 |       0.00040 |       1.47188
+     -0.00945 |      -0.04453 |      14.59359 |       0.00227 |       1.48429
+     -0.01312 |      -0.04559 |      14.07263 |       0.00509 |       1.51981
+     -0.01746 |      -0.04734 |      13.43401 |       0.00928 |       1.57811
+Evaluating losses...
+     -0.02172 |      -0.04837 |      12.99866 |       0.01171 |       1.61238
+----------------------------------
+| EpExecMean      | 0.00108      |
+| EpLenMean       | 2.98         |
+| EpRewMean       | 72.3         |
+| EpThisIter      | 87           |
+| EpisodesSoFar   | 3392         |
+| TimeElapsed     | 2.9e+04      |
+| TimestepsSoFar  | 22016        |
+| ev_tdlam_before | 0.994        |
+| loss_ent        | 1.6123792    |
+| loss_kl         | 0.011706289  |
+| loss_pol_entpen | -0.048371375 |
+| loss_pol_surr   | -0.021716574 |
+| loss_vf_loss    | 12.99866     |
+----------------------------------
+********** Iteration 86 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00349 |      -0.05374 |      62.75559 |       0.00221 |       1.79117
+     -0.02200 |      -0.05534 |      59.01267 |       0.01570 |       1.84456
+     -0.02711 |      -0.05570 |      54.88596 |       0.02267 |       1.85677
+     -0.02780 |      -0.05579 |      49.03468 |       0.02889 |       1.85976
+Evaluating losses...
+     -0.03009 |      -0.05591 |      45.73011 |       0.03362 |       1.86374
+----------------------------------
+| EpExecMean      | 0.00125      |
+| EpLenMean       | 3.41         |
+| EpRewMean       | 70.8         |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 3466         |
+| TimeElapsed     | 2.97e+04     |
+| TimestepsSoFar  | 22272        |
+| ev_tdlam_before | 0.963        |
+| loss_ent        | 1.8637388    |
+| loss_kl         | 0.033621088  |
+| loss_pol_entpen | -0.05591216  |
+| loss_pol_surr   | -0.030085808 |
+| loss_vf_loss    | 45.73011     |
+----------------------------------
+********** Iteration 87 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00314 |      -0.05664 |      59.94478 |       0.00035 |       1.88799
+     -0.00201 |      -0.05653 |      60.57098 |       0.00423 |       1.88435
+     -0.01330 |      -0.05657 |      59.11019 |       0.00556 |       1.88557
+     -0.02021 |      -0.05642 |      59.65092 |       0.01162 |       1.88063
+Evaluating losses...
+     -0.02263 |      -0.05632 |      57.13783 |       0.01742 |       1.87717
+----------------------------------
+| EpExecMean      | 0.00126      |
+| EpLenMean       | 3.45         |
+| EpRewMean       | 72.5         |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 3539         |
+| TimeElapsed     | 3.03e+04     |
+| TimestepsSoFar  | 22528        |
+| ev_tdlam_before | 0.964        |
+| loss_ent        | 1.8771703    |
+| loss_kl         | 0.017421197  |
+| loss_pol_entpen | -0.05631511  |
+| loss_pol_surr   | -0.022631938 |
+| loss_vf_loss    | 57.137833    |
+----------------------------------
+********** Iteration 88 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00246 |      -0.05759 |      31.77663 |       0.00049 |       1.91973
+     -0.00524 |      -0.05670 |      28.26248 |       0.00366 |       1.89014
+     -0.01708 |      -0.05578 |      25.30735 |       0.00918 |       1.85920
+     -0.02326 |      -0.05517 |      22.39941 |       0.01395 |       1.83910
+Evaluating losses...
+     -0.02491 |      -0.05513 |      18.58951 |       0.01604 |       1.83760
+----------------------------------
+| EpExecMean      | 0.00107      |
+| EpLenMean       | 3.64         |
+| EpRewMean       | 72.3         |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 3612         |
+| TimeElapsed     | 3.09e+04     |
+| TimestepsSoFar  | 22784        |
+| ev_tdlam_before | 0.979        |
+| loss_ent        | 1.8376045    |
+| loss_kl         | 0.016043572  |
+| loss_pol_entpen | -0.055128135 |
+| loss_pol_surr   | -0.024912579 |
+| loss_vf_loss    | 18.589508    |
+----------------------------------
+********** Iteration 89 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00506 |      -0.05265 |       8.92173 |       0.00033 |       1.75508
+     -0.02751 |      -0.05182 |       9.45525 |       0.00424 |       1.72721
+     -0.03429 |      -0.05229 |       9.27162 |       0.01110 |       1.74292
+     -0.03641 |      -0.05340 |       8.52325 |       0.01800 |       1.78007
+Evaluating losses...
+     -0.03887 |      -0.05396 |       7.79183 |       0.02061 |       1.79878
+----------------------------------
+| EpExecMean      | 0.000984     |
+| EpLenMean       | 3.41         |
+| EpRewMean       | 70.9         |
+| EpThisIter      | 76           |
+| EpisodesSoFar   | 3688         |
+| TimeElapsed     | 3.16e+04     |
+| TimestepsSoFar  | 23038        |
+| ev_tdlam_before | 0.996        |
+| loss_ent        | 1.7987758    |
+| loss_kl         | 0.02061236   |
+| loss_pol_entpen | -0.053963274 |
+| loss_pol_surr   | -0.038873542 |
+| loss_vf_loss    | 7.79183      |
+----------------------------------
+********** Iteration 90 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00312 |      -0.05192 |      14.56009 |       0.00022 |       1.73067
+     -0.01712 |      -0.05091 |      14.04554 |       0.00288 |       1.69702
+     -0.02217 |      -0.04960 |      11.44720 |       0.00711 |       1.65349
+     -0.02434 |      -0.04905 |       8.06087 |       0.00900 |       1.63503
+Evaluating losses...
+     -0.02505 |      -0.04907 |       5.76597 |       0.00971 |       1.63575
+----------------------------------
+| EpExecMean      | 0.00131      |
+| EpLenMean       | 3.37         |
+| EpRewMean       | 76           |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 3761         |
+| TimeElapsed     | 3.22e+04     |
+| TimestepsSoFar  | 23289        |
+| ev_tdlam_before | 0.991        |
+| loss_ent        | 1.6357483    |
+| loss_kl         | 0.009708587  |
+| loss_pol_entpen | -0.049072452 |
+| loss_pol_surr   | -0.025051035 |
+| loss_vf_loss    | 5.7659683    |
+----------------------------------
+********** Iteration 91 ************
+- best, reward: 1.477658, exec: 0.000401029, duration: 9:06:24.877879, schedule: blur_y.gpu_tile(x, y, xi, yi, 64, 16); blur_y.unroll(yi, 4); blur_y.unroll(xi, 2); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00059 |      -0.05079 |      34.25385 |       0.00061 |       1.69312
+     -0.02118 |      -0.05059 |      33.77951 |       0.00551 |       1.68649
+     -0.02132 |      -0.05046 |      30.56510 |       0.01401 |       1.68200
+     -0.01991 |      -0.05075 |      30.28353 |       0.01939 |       1.69181
+Evaluating losses...
+     -0.02245 |      -0.05131 |      30.96796 |       0.01933 |       1.71033
+----------------------------------
+| EpExecMean      | 0.00165      |
+| EpLenMean       | 3.67         |
+| EpRewMean       | 80           |
+| EpThisIter      | 70           |
+| EpisodesSoFar   | 3831         |
+| TimeElapsed     | 3.28e+04     |
+| TimestepsSoFar  | 23551        |
+| ev_tdlam_before | 0.98         |
+| loss_ent        | 1.7103345    |
+| loss_kl         | 0.019332327  |
+| loss_pol_entpen | -0.051310036 |
+| loss_pol_surr   | -0.02245417  |
+| loss_vf_loss    | 30.967957    |
+----------------------------------
+********** Iteration 92 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     3.08e-05 |      -0.05554 |      32.37701 |       0.00071 |       1.85134
+     -0.01433 |      -0.05679 |      31.29596 |       0.00472 |       1.89301
+     -0.01990 |      -0.05762 |      30.09811 |       0.01073 |       1.92072
+     -0.01801 |      -0.05836 |      28.99659 |       0.01764 |       1.94540
+Evaluating losses...
+     -0.02352 |      -0.05867 |      28.29617 |       0.02117 |       1.95575
+----------------------------------
+| EpExecMean      | 0.00198      |
+| EpLenMean       | 3.81         |
+| EpRewMean       | 74           |
+| EpThisIter      | 69           |
+| EpisodesSoFar   | 3900         |
+| TimeElapsed     | 3.35e+04     |
+| TimestepsSoFar  | 23807        |
+| ev_tdlam_before | 0.98         |
+| loss_ent        | 1.9557464    |
+| loss_kl         | 0.021172468  |
+| loss_pol_entpen | -0.05867239  |
+| loss_pol_surr   | -0.023520162 |
+| loss_vf_loss    | 28.296173    |
+----------------------------------
+********** Iteration 93 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00375 |      -0.05390 |      19.87343 |       0.00029 |       1.79659
+     -0.01449 |      -0.05354 |      18.08110 |       0.00334 |       1.78467
+     -0.01172 |      -0.05349 |      17.70105 |       0.00887 |       1.78297
+     -0.01668 |      -0.05433 |      17.87295 |       0.01114 |       1.81102
+Evaluating losses...
+     -0.02513 |      -0.05512 |      17.11559 |       0.01223 |       1.83730
+----------------------------------
+| EpExecMean      | 0.0011       |
+| EpLenMean       | 3.63         |
+| EpRewMean       | 75           |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 3974         |
+| TimeElapsed     | 3.41e+04     |
+| TimestepsSoFar  | 24062        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.8372978    |
+| loss_kl         | 0.012226282  |
+| loss_pol_entpen | -0.055118933 |
+| loss_pol_surr   | -0.025128148 |
+| loss_vf_loss    | 17.115591    |
+----------------------------------
+********** Iteration 94 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00022 |      -0.05646 |      14.25137 |       0.00036 |       1.88211
+     -0.01346 |      -0.05524 |      13.95045 |       0.00398 |       1.84140
+     -0.01962 |      -0.05434 |      13.76948 |       0.01132 |       1.81130
+     -0.02193 |      -0.05446 |      13.58945 |       0.01691 |       1.81547
+Evaluating losses...
+     -0.02229 |      -0.05470 |      13.34652 |       0.01992 |       1.82342
+----------------------------------
+| EpExecMean      | 0.000871     |
+| EpLenMean       | 3.54         |
+| EpRewMean       | 75.4         |
+| EpThisIter      | 71           |
+| EpisodesSoFar   | 4045         |
+| TimeElapsed     | 3.48e+04     |
+| TimestepsSoFar  | 24317        |
+| ev_tdlam_before | 0.991        |
+| loss_ent        | 1.8234217    |
+| loss_kl         | 0.019920725  |
+| loss_pol_entpen | -0.05470265  |
+| loss_pol_surr   | -0.022289217 |
+| loss_vf_loss    | 13.3465185   |
+----------------------------------
+********** Iteration 95 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00158 |      -0.05382 |      51.69455 |       0.00013 |       1.79386
+     -0.00211 |      -0.05365 |      28.25166 |       0.00095 |       1.78823
+     -0.00735 |      -0.05325 |      11.45652 |       0.00373 |       1.77510
+     -0.01371 |      -0.05291 |      16.48392 |       0.00733 |       1.76377
+Evaluating losses...
+     -0.01788 |      -0.05260 |      15.16305 |       0.00933 |       1.75350
+----------------------------------
+| EpExecMean      | 0.000881     |
+| EpLenMean       | 3.76         |
+| EpRewMean       | 78.3         |
+| EpThisIter      | 68           |
+| EpisodesSoFar   | 4113         |
+| TimeElapsed     | 3.54e+04     |
+| TimestepsSoFar  | 24574        |
+| ev_tdlam_before | 0.965        |
+| loss_ent        | 1.7534971    |
+| loss_kl         | 0.009328504  |
+| loss_pol_entpen | -0.052604917 |
+| loss_pol_surr   | -0.017878596 |
+| loss_vf_loss    | 15.1630535   |
+----------------------------------
+********** Iteration 96 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00296 |      -0.05270 |      20.97868 |       0.00068 |       1.75653
+      0.00103 |      -0.05097 |      14.12966 |       0.00427 |       1.69888
+     -0.00959 |      -0.05036 |      12.69034 |       0.00605 |       1.67862
+     -0.00518 |      -0.05129 |      12.67437 |       0.00392 |       1.70966
+Evaluating losses...
+     -0.00925 |      -0.05233 |      13.09094 |       0.00238 |       1.74425
+----------------------------------
+| EpExecMean      | 0.000791     |
+| EpLenMean       | 3.65         |
+| EpRewMean       | 70           |
+| EpThisIter      | 71           |
+| EpisodesSoFar   | 4184         |
+| TimeElapsed     | 3.6e+04      |
+| TimestepsSoFar  | 24828        |
+| ev_tdlam_before | 0.985        |
+| loss_ent        | 1.7442528    |
+| loss_kl         | 0.002377629  |
+| loss_pol_entpen | -0.05232758  |
+| loss_pol_surr   | -0.009245325 |
+| loss_vf_loss    | 13.0909395   |
+----------------------------------
+********** Iteration 97 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.01225 |      -0.05144 |     264.21338 |       0.00089 |       1.71451
+     -0.02529 |      -0.05269 |     130.19583 |       0.01011 |       1.75617
+     -0.02091 |      -0.05288 |      37.17147 |       0.02589 |       1.76251
+     -0.02079 |      -0.05255 |      46.29271 |       0.03354 |       1.75170
+Evaluating losses...
+     -0.02185 |      -0.05221 |      49.41456 |       0.03493 |       1.74027
+----------------------------------
+| EpExecMean      | 0.00183      |
+| EpLenMean       | 3.74         |
+| EpRewMean       | 69.9         |
+| EpThisIter      | 69           |
+| EpisodesSoFar   | 4253         |
+| TimeElapsed     | 3.67e+04     |
+| TimestepsSoFar  | 25086        |
+| ev_tdlam_before | 0.829        |
+| loss_ent        | 1.7402692    |
+| loss_kl         | 0.03493475   |
+| loss_pol_entpen | -0.052208073 |
+| loss_pol_surr   | -0.021849718 |
+| loss_vf_loss    | 49.41456     |
+----------------------------------
+********** Iteration 98 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00085 |      -0.05395 |      20.33432 |       0.00031 |       1.79821
+     -0.01988 |      -0.05282 |      21.35617 |       0.00307 |       1.76065
+     -0.02155 |      -0.05234 |      21.02491 |       0.00490 |       1.74465
+     -0.02332 |      -0.05358 |      19.64067 |       0.00465 |       1.78601
+Evaluating losses...
+     -0.02364 |      -0.05479 |      18.70314 |       0.00500 |       1.82639
+----------------------------------
+| EpExecMean      | 0.000929     |
+| EpLenMean       | 3.56         |
+| EpRewMean       | 75.4         |
+| EpThisIter      | 72           |
+| EpisodesSoFar   | 4325         |
+| TimeElapsed     | 3.73e+04     |
+| TimestepsSoFar  | 25342        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.8263881    |
+| loss_kl         | 0.00499524   |
+| loss_pol_entpen | -0.054791637 |
+| loss_pol_surr   | -0.02364324  |
+| loss_vf_loss    | 18.70314     |
+----------------------------------
+********** Iteration 99 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00258 |      -0.05419 |      21.97783 |       0.00018 |       1.80640
+     -0.01654 |      -0.05350 |      21.47522 |       0.00347 |       1.78336
+     -0.01816 |      -0.05279 |      20.66603 |       0.00992 |       1.75982
+     -0.01986 |      -0.05330 |      20.35373 |       0.01255 |       1.77673
+Evaluating losses...
+     -0.02180 |      -0.05403 |      20.11333 |       0.01383 |       1.80101
+----------------------------------
+| EpExecMean      | 0.00114      |
+| EpLenMean       | 3.58         |
+| EpRewMean       | 78.4         |
+| EpThisIter      | 71           |
+| EpisodesSoFar   | 4396         |
+| TimeElapsed     | 3.8e+04      |
+| TimestepsSoFar  | 25600        |
+| ev_tdlam_before | 0.987        |
+| loss_ent        | 1.801008     |
+| loss_kl         | 0.013828213  |
+| loss_pol_entpen | -0.05403024  |
+| loss_pol_surr   | -0.021798084 |
+| loss_vf_loss    | 20.113333    |
+----------------------------------
+********** Iteration 100 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00046 |      -0.05768 |     308.79321 |       0.00028 |       1.92264
+     -0.01257 |      -0.05807 |     304.49655 |       0.00295 |       1.93579
+     -0.01787 |      -0.05800 |     292.46216 |       0.00604 |       1.93334
+     -0.02028 |      -0.05832 |     274.36981 |       0.00876 |       1.94398
+Evaluating losses...
+     -0.02148 |      -0.05907 |     265.98022 |       0.01052 |       1.96892
+----------------------------------
+| EpExecMean      | 0.00147      |
+| EpLenMean       | 4.09         |
+| EpRewMean       | 73.7         |
+| EpThisIter      | 58           |
+| EpisodesSoFar   | 4454         |
+| TimeElapsed     | 3.86e+04     |
+| TimestepsSoFar  | 25855        |
+| ev_tdlam_before | 0.802        |
+| loss_ent        | 1.9689186    |
+| loss_kl         | 0.010524306  |
+| loss_pol_entpen | -0.059067555 |
+| loss_pol_surr   | -0.02147785  |
+| loss_vf_loss    | 265.98022    |
+----------------------------------
+********** Iteration 101 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00031 |      -0.05510 |      12.96981 |       0.00053 |       1.83682
+     -0.01316 |      -0.05377 |      14.63874 |       0.00642 |       1.79242
+     -0.01755 |      -0.05205 |      13.71625 |       0.01440 |       1.73485
+     -0.01851 |      -0.05257 |      11.71094 |       0.01785 |       1.75224
+Evaluating losses...
+     -0.02104 |      -0.05362 |      10.48418 |       0.01560 |       1.78728
+----------------------------------
+| EpExecMean      | 0.000935     |
+| EpLenMean       | 3.86         |
+| EpRewMean       | 80.1         |
+| EpThisIter      | 68           |
+| EpisodesSoFar   | 4522         |
+| TimeElapsed     | 3.93e+04     |
+| TimestepsSoFar  | 26112        |
+| ev_tdlam_before | 0.993        |
+| loss_ent        | 1.7872813    |
+| loss_kl         | 0.015599113  |
+| loss_pol_entpen | -0.053618435 |
+| loss_pol_surr   | -0.02104453  |
+| loss_vf_loss    | 10.484182    |
+----------------------------------
+********** Iteration 102 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00090 |      -0.05928 |      58.07234 |       0.00074 |       1.97587
+     -0.01747 |      -0.05919 |      54.62965 |       0.00539 |       1.97314
+     -0.02071 |      -0.05882 |      51.35287 |       0.00832 |       1.96058
+     -0.02352 |      -0.05864 |      48.36489 |       0.00829 |       1.95459
+Evaluating losses...
+     -0.02510 |      -0.05893 |      44.73515 |       0.00810 |       1.96424
+----------------------------------
+| EpExecMean      | 0.000889     |
+| EpLenMean       | 3.87         |
+| EpRewMean       | 79.9         |
+| EpThisIter      | 67           |
+| EpisodesSoFar   | 4589         |
+| TimeElapsed     | 3.99e+04     |
+| TimestepsSoFar  | 26368        |
+| ev_tdlam_before | 0.962        |
+| loss_ent        | 1.964242     |
+| loss_kl         | 0.008097628  |
+| loss_pol_entpen | -0.05892726  |
+| loss_pol_surr   | -0.025095582 |
+| loss_vf_loss    | 44.735146    |
+----------------------------------
+********** Iteration 103 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00020 |      -0.05689 |      13.89321 |       0.00021 |       1.89642
+     -0.01361 |      -0.05509 |      13.13365 |       0.00304 |       1.83622
+     -0.02342 |      -0.05344 |      11.89879 |       0.00959 |       1.78139
+     -0.02283 |      -0.05402 |      10.52531 |       0.01227 |       1.80053
+Evaluating losses...
+     -0.02566 |      -0.05475 |       9.84445 |       0.01094 |       1.82489
+----------------------------------
+| EpExecMean      | 0.00165      |
+| EpLenMean       | 3.68         |
+| EpRewMean       | 65.5         |
+| EpThisIter      | 65           |
+| EpisodesSoFar   | 4654         |
+| TimeElapsed     | 4.04e+04     |
+| TimestepsSoFar  | 26621        |
+| ev_tdlam_before | 0.99         |
+| loss_ent        | 1.8248876    |
+| loss_kl         | 0.010935735  |
+| loss_pol_entpen | -0.054746628 |
+| loss_pol_surr   | -0.02565765  |
+| loss_vf_loss    | 9.844445     |
+----------------------------------
+********** Iteration 104 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00150 |      -0.05531 |      67.24946 |       0.00027 |       1.84379
+     -0.00493 |      -0.05584 |      64.60772 |       0.00256 |       1.86145
+     -0.00798 |      -0.05588 |      61.36496 |       0.00404 |       1.86255
+     -0.01016 |      -0.05622 |      56.17581 |       0.00425 |       1.87412
+Evaluating losses...
+     -0.01376 |      -0.05653 |      53.47271 |       0.00438 |       1.88443
+----------------------------------
+| EpExecMean      | 0.00141      |
+| EpLenMean       | 3.59         |
+| EpRewMean       | 69.8         |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 4727         |
+| TimeElapsed     | 4.1e+04      |
+| TimestepsSoFar  | 26879        |
+| ev_tdlam_before | 0.958        |
+| loss_ent        | 1.8844273    |
+| loss_kl         | 0.004382196  |
+| loss_pol_entpen | -0.056532823 |
+| loss_pol_surr   | -0.013761207 |
+| loss_vf_loss    | 53.472713    |
+----------------------------------
+********** Iteration 105 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00695 |      -0.05407 |      27.88780 |      7.61e-05 |       1.80222
+     -0.00386 |      -0.05389 |      25.46758 |       0.00051 |       1.79644
+     -0.00730 |      -0.05354 |      23.35507 |       0.00222 |       1.78478
+     -0.00676 |      -0.05393 |      22.40937 |       0.00374 |       1.79753
+Evaluating losses...
+     -0.00694 |      -0.05427 |      20.93505 |       0.00425 |       1.80902
+-----------------------------------
+| EpExecMean      | 0.000799      |
+| EpLenMean       | 3.42          |
+| EpRewMean       | 76.4          |
+| EpThisIter      | 76            |
+| EpisodesSoFar   | 4803          |
+| TimeElapsed     | 4.17e+04      |
+| TimestepsSoFar  | 27136         |
+| ev_tdlam_before | 0.984         |
+| loss_ent        | 1.8090243     |
+| loss_kl         | 0.0042516515  |
+| loss_pol_entpen | -0.054270733  |
+| loss_pol_surr   | -0.0069445707 |
+| loss_vf_loss    | 20.935055     |
+-----------------------------------
+********** Iteration 106 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00142 |      -0.05611 |      14.97085 |       0.00063 |       1.87041
+     -0.01245 |      -0.05456 |      13.96625 |       0.00579 |       1.81865
+     -0.01730 |      -0.05336 |      13.46587 |       0.01017 |       1.77865
+     -0.01888 |      -0.05334 |      12.92075 |       0.00816 |       1.77796
+Evaluating losses...
+     -0.01974 |      -0.05377 |      12.65222 |       0.00639 |       1.79246
+----------------------------------
+| EpExecMean      | 0.000895     |
+| EpLenMean       | 3.35         |
+| EpRewMean       | 68.8         |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 4877         |
+| TimeElapsed     | 4.24e+04     |
+| TimestepsSoFar  | 27392        |
+| ev_tdlam_before | 0.99         |
+| loss_ent        | 1.7924569    |
+| loss_kl         | 0.006389091  |
+| loss_pol_entpen | -0.053773705 |
+| loss_pol_surr   | -0.019740168 |
+| loss_vf_loss    | 12.652221    |
+----------------------------------
+********** Iteration 107 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00430 |      -0.05238 |       1.22351 |       0.00038 |       1.74613
+     -0.02098 |      -0.04995 |       1.12315 |       0.00709 |       1.66514
+     -0.02496 |      -0.04881 |       1.04629 |       0.01451 |       1.62699
+     -0.02545 |      -0.04958 |       0.97997 |       0.01530 |       1.65280
+Evaluating losses...
+     -0.02770 |      -0.05083 |       0.94721 |       0.01652 |       1.69418
+----------------------------------
+| EpExecMean      | 0.000869     |
+| EpLenMean       | 3.36         |
+| EpRewMean       | 70.4         |
+| EpThisIter      | 75           |
+| EpisodesSoFar   | 4952         |
+| TimeElapsed     | 4.31e+04     |
+| TimestepsSoFar  | 27648        |
+| ev_tdlam_before | 0.999        |
+| loss_ent        | 1.694179     |
+| loss_kl         | 0.016523834  |
+| loss_pol_entpen | -0.05082537  |
+| loss_pol_surr   | -0.027696813 |
+| loss_vf_loss    | 0.9472091    |
+----------------------------------
+********** Iteration 108 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00345 |      -0.05034 |       3.82609 |       0.00048 |       1.67795
+     -0.00725 |      -0.05019 |       3.62994 |       0.00154 |       1.67310
+     -0.01054 |      -0.04843 |       3.18516 |       0.00356 |       1.61433
+     -0.01123 |      -0.04662 |       2.91598 |       0.00842 |       1.55395
+Evaluating losses...
+     -0.01198 |      -0.04599 |       2.59207 |       0.01157 |       1.53291
+----------------------------------
+| EpExecMean      | 0.00125      |
+| EpLenMean       | 3.4          |
+| EpRewMean       | 70.4         |
+| EpThisIter      | 78           |
+| EpisodesSoFar   | 5030         |
+| TimeElapsed     | 4.38e+04     |
+| TimestepsSoFar  | 27902        |
+| ev_tdlam_before | 0.998        |
+| loss_ent        | 1.5329092    |
+| loss_kl         | 0.011568679  |
+| loss_pol_entpen | -0.04598727  |
+| loss_pol_surr   | -0.011976287 |
+| loss_vf_loss    | 2.5920749    |
+----------------------------------
+********** Iteration 109 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00021 |      -0.04590 |      19.83381 |       0.00014 |       1.52988
+     -0.00426 |      -0.04527 |      19.27784 |       0.00076 |       1.50887
+     -0.00630 |      -0.04521 |      18.35133 |       0.00118 |       1.50703
+     -0.00751 |      -0.04582 |      17.54922 |       0.00193 |       1.52734
+Evaluating losses...
+     -0.00859 |      -0.04643 |      17.24139 |       0.00313 |       1.54762
+----------------------------------
+| EpExecMean      | 0.000842     |
+| EpLenMean       | 3.56         |
+| EpRewMean       | 76.8         |
+| EpThisIter      | 71           |
+| EpisodesSoFar   | 5101         |
+| TimeElapsed     | 4.45e+04     |
+| TimestepsSoFar  | 28160        |
+| ev_tdlam_before | 0.987        |
+| loss_ent        | 1.5476153    |
+| loss_kl         | 0.003127955  |
+| loss_pol_entpen | -0.046428457 |
+| loss_pol_surr   | -0.008592632 |
+| loss_vf_loss    | 17.241388    |
+----------------------------------
+********** Iteration 110 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00084 |      -0.04803 |      21.31433 |       0.00029 |       1.60100
+     -0.00634 |      -0.04920 |      20.30861 |       0.00286 |       1.64003
+     -0.00658 |      -0.05022 |      18.75809 |       0.00791 |       1.67409
+     -0.00812 |      -0.05088 |      17.92394 |       0.01148 |       1.69584
+Evaluating losses...
+     -0.01165 |      -0.05105 |      16.97326 |       0.01182 |       1.70155
+---------------------------------
+| EpExecMean      | 0.00129     |
+| EpLenMean       | 3.65        |
+| EpRewMean       | 75.7        |
+| EpThisIter      | 72          |
+| EpisodesSoFar   | 5173        |
+| TimeElapsed     | 4.51e+04    |
+| TimestepsSoFar  | 28416       |
+| ev_tdlam_before | 0.987       |
+| loss_ent        | 1.7015488   |
+| loss_kl         | 0.011821182 |
+| loss_pol_entpen | -0.05104646 |
+| loss_pol_surr   | -0.01165057 |
+| loss_vf_loss    | 16.973265   |
+---------------------------------
+********** Iteration 111 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00020 |      -0.05127 |       6.08954 |       0.00021 |       1.70886
+     -0.01720 |      -0.04940 |       5.64725 |       0.00389 |       1.64663
+     -0.01834 |      -0.04826 |       5.58567 |       0.00879 |       1.60874
+     -0.01881 |      -0.04846 |       5.26098 |       0.01000 |       1.61548
+Evaluating losses...
+     -0.01938 |      -0.04914 |       5.22107 |       0.00949 |       1.63785
+----------------------------------
+| EpExecMean      | 0.00127      |
+| EpLenMean       | 3.61         |
+| EpRewMean       | 70.9         |
+| EpThisIter      | 70           |
+| EpisodesSoFar   | 5243         |
+| TimeElapsed     | 4.58e+04     |
+| TimestepsSoFar  | 28669        |
+| ev_tdlam_before | 0.996        |
+| loss_ent        | 1.6378515    |
+| loss_kl         | 0.009491364  |
+| loss_pol_entpen | -0.049135543 |
+| loss_pol_surr   | -0.019379701 |
+| loss_vf_loss    | 5.2210693    |
+----------------------------------
+********** Iteration 112 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00040 |      -0.04703 |       3.44366 |       0.00014 |       1.56772
+     -0.01141 |      -0.04641 |       3.30719 |       0.00219 |       1.54702
+     -0.01435 |      -0.04518 |       2.69620 |       0.00523 |       1.50598
+     -0.01742 |      -0.04457 |       1.94620 |       0.00611 |       1.48560
+Evaluating losses...
+     -0.01861 |      -0.04448 |       1.70179 |       0.00648 |       1.48263
+----------------------------------
+| EpExecMean      | 0.000842     |
+| EpLenMean       | 3.45         |
+| EpRewMean       | 78.7         |
+| EpThisIter      | 77           |
+| EpisodesSoFar   | 5320         |
+| TimeElapsed     | 4.65e+04     |
+| TimestepsSoFar  | 28928        |
+| ev_tdlam_before | 0.998        |
+| loss_ent        | 1.4826298    |
+| loss_kl         | 0.0064824736 |
+| loss_pol_entpen | -0.044478893 |
+| loss_pol_surr   | -0.018609647 |
+| loss_vf_loss    | 1.7017933    |
+----------------------------------
+********** Iteration 113 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00211 |      -0.04818 |      10.76913 |       0.00028 |       1.60584
+     -0.01389 |      -0.04785 |      10.04526 |       0.00238 |       1.59510
+     -0.01365 |      -0.04826 |       9.56693 |       0.00546 |       1.60867
+     -0.01596 |      -0.04838 |       9.39966 |       0.00750 |       1.61274
+Evaluating losses...
+     -0.01775 |      -0.04838 |       9.29714 |       0.00814 |       1.61257
+----------------------------------
+| EpExecMean      | 0.00124      |
+| EpLenMean       | 3.4          |
+| EpRewMean       | 72.2         |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 5393         |
+| TimeElapsed     | 4.72e+04     |
+| TimestepsSoFar  | 29181        |
+| ev_tdlam_before | 0.993        |
+| loss_ent        | 1.6125741    |
+| loss_kl         | 0.00814056   |
+| loss_pol_entpen | -0.04837722  |
+| loss_pol_surr   | -0.017747996 |
+| loss_vf_loss    | 9.297138     |
+----------------------------------
+********** Iteration 114 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00071 |      -0.04381 |      12.27514 |       0.00016 |       1.46022
+     -0.00626 |      -0.04373 |      11.45418 |       0.00387 |       1.45752
+     -0.01304 |      -0.04363 |      10.43984 |       0.01104 |       1.45425
+     -0.01667 |      -0.04284 |       9.64151 |       0.01109 |       1.42791
+Evaluating losses...
+     -0.02192 |      -0.04220 |       9.12100 |       0.00961 |       1.40666
+----------------------------------
+| EpExecMean      | 0.00142      |
+| EpLenMean       | 3.37         |
+| EpRewMean       | 73.2         |
+| EpThisIter      | 71           |
+| EpisodesSoFar   | 5464         |
+| TimeElapsed     | 4.79e+04     |
+| TimestepsSoFar  | 29416        |
+| ev_tdlam_before | 0.993        |
+| loss_ent        | 1.4066627    |
+| loss_kl         | 0.009605138  |
+| loss_pol_entpen | -0.04219988  |
+| loss_pol_surr   | -0.021915345 |
+| loss_vf_loss    | 9.1209955    |
+----------------------------------
+********** Iteration 115 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00055 |      -0.04178 |       8.30709 |       0.00016 |       1.39266
+     -0.00165 |      -0.04131 |       8.19184 |       0.00086 |       1.37711
+     -0.00558 |      -0.04106 |       8.02257 |       0.00165 |       1.36853
+     -0.00826 |      -0.04093 |       7.89794 |       0.00187 |       1.36440
+Evaluating losses...
+     -0.01148 |      -0.04102 |       7.79010 |       0.00194 |       1.36747
+----------------------------------
+| EpExecMean      | 0.00167      |
+| EpLenMean       | 3.51         |
+| EpRewMean       | 75.1         |
+| EpThisIter      | 79           |
+| EpisodesSoFar   | 5543         |
+| TimeElapsed     | 4.86e+04     |
+| TimestepsSoFar  | 29693        |
+| ev_tdlam_before | 0.995        |
+| loss_ent        | 1.367465     |
+| loss_kl         | 0.0019441033 |
+| loss_pol_entpen | -0.041023947 |
+| loss_pol_surr   | -0.011481455 |
+| loss_vf_loss    | 7.7901006    |
+----------------------------------
+********** Iteration 116 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00130 |      -0.04115 |      14.18108 |       0.00011 |       1.37152
+     -0.01053 |      -0.04039 |      13.84873 |       0.00141 |       1.34622
+     -0.01216 |      -0.04011 |      13.37729 |       0.00300 |       1.33691
+     -0.01282 |      -0.04043 |      13.08117 |       0.00380 |       1.34765
+Evaluating losses...
+     -0.01369 |      -0.04095 |      12.68276 |       0.00420 |       1.36489
+----------------------------------
+| EpExecMean      | 0.000986     |
+| EpLenMean       | 3.4          |
+| EpRewMean       | 79.3         |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 5617         |
+| TimeElapsed     | 4.93e+04     |
+| TimestepsSoFar  | 29949        |
+| ev_tdlam_before | 0.992        |
+| loss_ent        | 1.3648927    |
+| loss_kl         | 0.0041994387 |
+| loss_pol_entpen | -0.04094678  |
+| loss_pol_surr   | -0.013691519 |
+| loss_vf_loss    | 12.682763    |
+----------------------------------
+********** Iteration 117 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -4.55e-05 |      -0.04415 |      14.48311 |       0.00017 |       1.47176
+     -0.00817 |      -0.04508 |      14.24932 |       0.00184 |       1.50263
+     -0.01082 |      -0.04564 |      13.40043 |       0.00429 |       1.52118
+     -0.01207 |      -0.04587 |      12.48967 |       0.00631 |       1.52916
+Evaluating losses...
+     -0.01391 |      -0.04607 |      11.87517 |       0.00742 |       1.53560
+----------------------------------
+| EpExecMean      | 0.00116      |
+| EpLenMean       | 3.21         |
+| EpRewMean       | 71.7         |
+| EpThisIter      | 79           |
+| EpisodesSoFar   | 5696         |
+| TimeElapsed     | 5e+04        |
+| TimestepsSoFar  | 30204        |
+| ev_tdlam_before | 0.991        |
+| loss_ent        | 1.535602     |
+| loss_kl         | 0.007421636  |
+| loss_pol_entpen | -0.046068057 |
+| loss_pol_surr   | -0.013912985 |
+| loss_vf_loss    | 11.875168    |
+----------------------------------
+********** Iteration 118 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00162 |      -0.04325 |      32.43888 |       0.00016 |       1.44155
+     -0.01034 |      -0.04394 |      32.19653 |       0.00267 |       1.46476
+     -0.01609 |      -0.04480 |      31.18495 |       0.00967 |       1.49341
+     -0.02263 |      -0.04428 |      30.18342 |       0.01152 |       1.47612
+Evaluating losses...
+     -0.02497 |      -0.04388 |      29.10120 |       0.01192 |       1.46277
+----------------------------------
+| EpExecMean      | 0.00143      |
+| EpLenMean       | 3.67         |
+| EpRewMean       | 78.3         |
+| EpThisIter      | 67           |
+| EpisodesSoFar   | 5763         |
+| TimeElapsed     | 5.06e+04     |
+| TimestepsSoFar  | 30464        |
+| ev_tdlam_before | 0.982        |
+| loss_ent        | 1.4627745    |
+| loss_kl         | 0.01192098   |
+| loss_pol_entpen | -0.043883238 |
+| loss_pol_surr   | -0.024965867 |
+| loss_vf_loss    | 29.101204    |
+----------------------------------
+********** Iteration 119 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00740 |      -0.04046 |       0.42899 |       0.00077 |       1.34859
+     -0.02248 |      -0.03743 |       0.42507 |       0.00719 |       1.24772
+     -0.02339 |      -0.03581 |       0.41496 |       0.01394 |       1.19350
+     -0.02465 |      -0.03584 |       0.40408 |       0.01577 |       1.19480
+Evaluating losses...
+     -0.02548 |      -0.03633 |       0.39368 |       0.01508 |       1.21101
+----------------------------------
+| EpExecMean      | 0.000951     |
+| EpLenMean       | 3.48         |
+| EpRewMean       | 78.3         |
+| EpThisIter      | 82           |
+| EpisodesSoFar   | 5845         |
+| TimeElapsed     | 5.13e+04     |
+| TimestepsSoFar  | 30718        |
+| ev_tdlam_before | 1            |
+| loss_ent        | 1.211008     |
+| loss_kl         | 0.015081255  |
+| loss_pol_entpen | -0.036330238 |
+| loss_pol_surr   | -0.025479922 |
+| loss_vf_loss    | 0.39367777   |
+----------------------------------
+********** Iteration 120 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00197 |      -0.03806 |       3.93197 |      8.26e-05 |       1.26877
+     -0.00978 |      -0.03782 |       3.80045 |       0.00110 |       1.26056
+     -0.01478 |      -0.03708 |       3.36366 |       0.00383 |       1.23609
+     -0.01563 |      -0.03641 |       3.14081 |       0.00636 |       1.21374
+Evaluating losses...
+     -0.01607 |      -0.03604 |       2.80555 |       0.00806 |       1.20121
+----------------------------------
+| EpExecMean      | 0.00109      |
+| EpLenMean       | 3.04         |
+| EpRewMean       | 71           |
+| EpThisIter      | 85           |
+| EpisodesSoFar   | 5930         |
+| TimeElapsed     | 5.21e+04     |
+| TimestepsSoFar  | 30974        |
+| ev_tdlam_before | 0.998        |
+| loss_ent        | 1.2012062    |
+| loss_kl         | 0.008057022  |
+| loss_pol_entpen | -0.036036186 |
+| loss_pol_surr   | -0.01606588  |
+| loss_vf_loss    | 2.8055534    |
+----------------------------------
+********** Iteration 121 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00021 |      -0.03908 |      32.02288 |       0.00010 |       1.30252
+     -0.00787 |      -0.03920 |      31.54960 |       0.00092 |       1.30679
+     -0.00925 |      -0.03955 |      30.45516 |       0.00245 |       1.31819
+     -0.00861 |      -0.03989 |      29.27979 |       0.00384 |       1.32964
+Evaluating losses...
+     -0.00869 |      -0.04022 |      28.28716 |       0.00480 |       1.34050
+----------------------------------
+| EpExecMean      | 0.00229      |
+| EpLenMean       | 3.18         |
+| EpRewMean       | 72           |
+| EpThisIter      | 78           |
+| EpisodesSoFar   | 6008         |
+| TimeElapsed     | 5.27e+04     |
+| TimestepsSoFar  | 31230        |
+| ev_tdlam_before | 0.982        |
+| loss_ent        | 1.3405018    |
+| loss_kl         | 0.0047973637 |
+| loss_pol_entpen | -0.04021505  |
+| loss_pol_surr   | -0.008685732 |
+| loss_vf_loss    | 28.287155    |
+----------------------------------
+********** Iteration 122 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00095 |      -0.03620 |      21.02719 |       0.00011 |       1.20655
+     -0.00514 |      -0.03711 |      20.63332 |       0.00126 |       1.23707
+     -0.00602 |      -0.03820 |      20.24877 |       0.00378 |       1.27325
+     -0.00481 |      -0.03934 |      19.31723 |       0.00713 |       1.31145
+Evaluating losses...
+     -0.00655 |      -0.04009 |      18.98441 |       0.00955 |       1.33629
+----------------------------------
+| EpExecMean      | 0.00168      |
+| EpLenMean       | 3.06         |
+| EpRewMean       | 72.9         |
+| EpThisIter      | 86           |
+| EpisodesSoFar   | 6094         |
+| TimeElapsed     | 5.35e+04     |
+| TimestepsSoFar  | 31486        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.3362861    |
+| loss_kl         | 0.009554143  |
+| loss_pol_entpen | -0.040088583 |
+| loss_pol_surr   | -0.006548021 |
+| loss_vf_loss    | 18.98441     |
+----------------------------------
+********** Iteration 123 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00057 |      -0.04004 |       9.82424 |       0.00018 |       1.33472
+     -0.00547 |      -0.04076 |       9.00200 |       0.00133 |       1.35853
+     -0.00587 |      -0.04107 |       7.42647 |       0.00360 |       1.36908
+     -0.00627 |      -0.04158 |       6.00957 |       0.00632 |       1.38584
+Evaluating losses...
+     -0.00638 |      -0.04204 |       5.06642 |       0.00830 |       1.40126
+-----------------------------------
+| EpExecMean      | 0.001         |
+| EpLenMean       | 3.11          |
+| EpRewMean       | 75.5          |
+| EpThisIter      | 81            |
+| EpisodesSoFar   | 6175          |
+| TimeElapsed     | 5.42e+04      |
+| TimestepsSoFar  | 31742         |
+| ev_tdlam_before | 0.995         |
+| loss_ent        | 1.4012599     |
+| loss_kl         | 0.008303295   |
+| loss_pol_entpen | -0.042037796  |
+| loss_pol_surr   | -0.0063811783 |
+| loss_vf_loss    | 5.0664196     |
+-----------------------------------
+********** Iteration 124 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -9.69e-05 |      -0.04424 |       6.70851 |      9.31e-05 |       1.47481
+     -0.00591 |      -0.04370 |       6.46698 |       0.00086 |       1.45669
+     -0.00927 |      -0.04257 |       6.15446 |       0.00271 |       1.41886
+     -0.00975 |      -0.04210 |       6.01996 |       0.00412 |       1.40324
+Evaluating losses...
+     -0.01095 |      -0.04215 |       5.89860 |       0.00473 |       1.40506
+----------------------------------
+| EpExecMean      | 0.000736     |
+| EpLenMean       | 3.35         |
+| EpRewMean       | 81.2         |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 6249         |
+| TimeElapsed     | 5.49e+04     |
+| TimestepsSoFar  | 31991        |
+| ev_tdlam_before | 0.996        |
+| loss_ent        | 1.4050614    |
+| loss_kl         | 0.0047278865 |
+| loss_pol_entpen | -0.042151842 |
+| loss_pol_surr   | -0.010950275 |
+| loss_vf_loss    | 5.898601     |
+----------------------------------
+********** Iteration 125 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00094 |      -0.04124 |       5.35126 |      7.51e-05 |       1.37473
+     -0.00539 |      -0.04116 |       5.32869 |       0.00072 |       1.37191
+     -0.00779 |      -0.04071 |       5.17910 |       0.00235 |       1.35699
+     -0.00895 |      -0.04089 |       4.96809 |       0.00294 |       1.36316
+Evaluating losses...
+     -0.01079 |      -0.04132 |       4.77321 |       0.00249 |       1.37725
+----------------------------------
+| EpExecMean      | 0.0009       |
+| EpLenMean       | 3.38         |
+| EpRewMean       | 77.2         |
+| EpThisIter      | 78           |
+| EpisodesSoFar   | 6327         |
+| TimeElapsed     | 5.57e+04     |
+| TimestepsSoFar  | 32256        |
+| ev_tdlam_before | 0.997        |
+| loss_ent        | 1.3772542    |
+| loss_kl         | 0.0024949056 |
+| loss_pol_entpen | -0.041317627 |
+| loss_pol_surr   | -0.010785429 |
+| loss_vf_loss    | 4.7732115    |
+----------------------------------
+********** Iteration 126 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00117 |      -0.04026 |       0.34326 |       0.00027 |       1.34213
+     -0.01429 |      -0.03890 |       0.32954 |       0.00149 |       1.29657
+     -0.01809 |      -0.03807 |       0.32064 |       0.00340 |       1.26911
+     -0.02014 |      -0.03794 |       0.31402 |       0.00517 |       1.26460
+Evaluating losses...
+     -0.02121 |      -0.03764 |       0.31043 |       0.00551 |       1.25482
+----------------------------------
+| EpExecMean      | 0.000732     |
+| EpLenMean       | 3.31         |
+| EpRewMean       | 75.5         |
+| EpThisIter      | 77           |
+| EpisodesSoFar   | 6404         |
+| TimeElapsed     | 5.65e+04     |
+| TimestepsSoFar  | 32510        |
+| ev_tdlam_before | 1            |
+| loss_ent        | 1.2548184    |
+| loss_kl         | 0.0055123274 |
+| loss_pol_entpen | -0.03764455  |
+| loss_pol_surr   | -0.021210503 |
+| loss_vf_loss    | 0.31043267   |
+----------------------------------
+********** Iteration 127 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00481 |      -0.03911 |      13.64095 |       0.00022 |       1.30370
+     -0.00263 |      -0.03865 |      12.80251 |       0.00134 |       1.28830
+     -0.00464 |      -0.03862 |      11.79529 |       0.00226 |       1.28721
+     -0.00481 |      -0.03873 |      10.22906 |       0.00280 |       1.29110
+Evaluating losses...
+     -0.00655 |      -0.03879 |       9.50114 |       0.00323 |       1.29307
+-----------------------------------
+| EpExecMean      | 0.00115       |
+| EpLenMean       | 3.42          |
+| EpRewMean       | 80.5          |
+| EpThisIter      | 75            |
+| EpisodesSoFar   | 6479          |
+| TimeElapsed     | 5.72e+04      |
+| TimestepsSoFar  | 32768         |
+| ev_tdlam_before | 0.992         |
+| loss_ent        | 1.2930655     |
+| loss_kl         | 0.0032294723  |
+| loss_pol_entpen | -0.038791966  |
+| loss_pol_surr   | -0.0065519996 |
+| loss_vf_loss    | 9.5011425     |
+-----------------------------------
+********** Iteration 128 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00012 |      -0.03775 |       6.74069 |      8.62e-05 |       1.25837
+     -0.00178 |      -0.03778 |       6.81547 |       0.00063 |       1.25940
+     -0.00252 |      -0.03817 |       6.85094 |       0.00163 |       1.27245
+     -0.00330 |      -0.03878 |       6.63261 |       0.00280 |       1.29263
+Evaluating losses...
+     -0.00351 |      -0.03929 |       6.55795 |       0.00372 |       1.30961
+-----------------------------------
+| EpExecMean      | 0.00124       |
+| EpLenMean       | 3.45          |
+| EpRewMean       | 86            |
+| EpThisIter      | 74            |
+| EpisodesSoFar   | 6553          |
+| TimeElapsed     | 5.8e+04       |
+| TimestepsSoFar  | 33018         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.3096092     |
+| loss_kl         | 0.00372415    |
+| loss_pol_entpen | -0.039288275  |
+| loss_pol_surr   | -0.0035057291 |
+| loss_vf_loss    | 6.557952      |
+-----------------------------------
+********** Iteration 129 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00056 |      -0.03986 |       4.05872 |      3.69e-05 |       1.32855
+     -0.00502 |      -0.03930 |       4.01613 |       0.00119 |       1.31007
+     -0.00674 |      -0.03860 |       3.96852 |       0.00430 |       1.28676
+     -0.00838 |      -0.03858 |       3.91662 |       0.00543 |       1.28587
+Evaluating losses...
+     -0.01012 |      -0.03890 |       3.80617 |       0.00517 |       1.29656
+----------------------------------
+| EpExecMean      | 0.000893     |
+| EpLenMean       | 3.51         |
+| EpRewMean       | 77.5         |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 6627         |
+| TimeElapsed     | 5.87e+04     |
+| TimestepsSoFar  | 33278        |
+| ev_tdlam_before | 0.998        |
+| loss_ent        | 1.2965624    |
+| loss_kl         | 0.0051674363 |
+| loss_pol_entpen | -0.038896877 |
+| loss_pol_surr   | -0.010115253 |
+| loss_vf_loss    | 3.8061664    |
+----------------------------------
+********** Iteration 130 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00017 |      -0.04004 |       8.52521 |      7.67e-05 |       1.33478
+     -0.00354 |      -0.04021 |       8.53213 |       0.00081 |       1.34036
+     -0.00537 |      -0.04002 |       8.45962 |       0.00215 |       1.33404
+     -0.00604 |      -0.03996 |       8.36986 |       0.00303 |       1.33211
+Evaluating losses...
+     -0.00730 |      -0.04005 |       8.26129 |       0.00345 |       1.33516
+-----------------------------------
+| EpExecMean      | 0.00107       |
+| EpLenMean       | 3.36          |
+| EpRewMean       | 77.4          |
+| EpThisIter      | 78            |
+| EpisodesSoFar   | 6705          |
+| TimeElapsed     | 5.94e+04      |
+| TimestepsSoFar  | 33536         |
+| ev_tdlam_before | 0.995         |
+| loss_ent        | 1.3351555     |
+| loss_kl         | 0.0034462614  |
+| loss_pol_entpen | -0.040054664  |
+| loss_pol_surr   | -0.0073047867 |
+| loss_vf_loss    | 8.2612915     |
+-----------------------------------
+********** Iteration 131 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     8.69e-05 |      -0.04148 |      18.26704 |      4.35e-05 |       1.38254
+     -0.00129 |      -0.04175 |      18.10335 |       0.00046 |       1.39164
+     -0.00182 |      -0.04187 |      18.19921 |       0.00139 |       1.39581
+     -0.00231 |      -0.04219 |      18.05991 |       0.00221 |       1.40618
+Evaluating losses...
+     -0.00246 |      -0.04245 |      18.01003 |       0.00259 |       1.41496
+-----------------------------------
+| EpExecMean      | 0.00118       |
+| EpLenMean       | 3.45          |
+| EpRewMean       | 70.5          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 6777          |
+| TimeElapsed     | 6.01e+04      |
+| TimestepsSoFar  | 33792         |
+| ev_tdlam_before | 0.988         |
+| loss_ent        | 1.414962      |
+| loss_kl         | 0.0025882814  |
+| loss_pol_entpen | -0.042448863  |
+| loss_pol_surr   | -0.0024624467 |
+| loss_vf_loss    | 18.01003      |
+-----------------------------------
+********** Iteration 132 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00212 |      -0.03845 |      16.11205 |       0.00023 |       1.28153
+     -0.01366 |      -0.03910 |      15.45017 |       0.00407 |       1.30322
+     -0.01472 |      -0.04001 |      14.83766 |       0.01020 |       1.33362
+     -0.01451 |      -0.04066 |      14.13997 |       0.01245 |       1.35522
+Evaluating losses...
+     -0.01641 |      -0.04065 |      13.82733 |       0.01266 |       1.35514
+----------------------------------
+| EpExecMean      | 0.000973     |
+| EpLenMean       | 3.71         |
+| EpRewMean       | 75.4         |
+| EpThisIter      | 61           |
+| EpisodesSoFar   | 6838         |
+| TimeElapsed     | 6.07e+04     |
+| TimestepsSoFar  | 34033        |
+| ev_tdlam_before | 0.99         |
+| loss_ent        | 1.3551404    |
+| loss_kl         | 0.012663318  |
+| loss_pol_entpen | -0.040654212 |
+| loss_pol_surr   | -0.016409975 |
+| loss_vf_loss    | 13.827333    |
+----------------------------------
+********** Iteration 133 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00012 |      -0.03953 |       2.82341 |      4.09e-05 |       1.31757
+     -0.00448 |      -0.03842 |       2.79207 |       0.00126 |       1.28076
+     -0.00630 |      -0.03790 |       2.71554 |       0.00281 |       1.26326
+     -0.00808 |      -0.03867 |       2.61527 |       0.00274 |       1.28888
+Evaluating losses...
+     -0.00939 |      -0.03923 |       2.50684 |       0.00254 |       1.30780
+----------------------------------
+| EpExecMean      | 0.000975     |
+| EpLenMean       | 3.78         |
+| EpRewMean       | 74.8         |
+| EpThisIter      | 74           |
+| EpisodesSoFar   | 6912         |
+| TimeElapsed     | 6.15e+04     |
+| TimestepsSoFar  | 34303        |
+| ev_tdlam_before | 0.998        |
+| loss_ent        | 1.3078047    |
+| loss_kl         | 0.0025357073 |
+| loss_pol_entpen | -0.039234143 |
+| loss_pol_surr   | -0.009390466 |
+| loss_vf_loss    | 2.5068429    |
+----------------------------------
+********** Iteration 134 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00084 |      -0.04131 |      17.48674 |      9.78e-05 |       1.37702
+     -0.00355 |      -0.04182 |      17.34945 |       0.00090 |       1.39415
+     -0.00388 |      -0.04219 |      17.31646 |       0.00206 |       1.40646
+     -0.00491 |      -0.04232 |      17.12999 |       0.00292 |       1.41068
+Evaluating losses...
+     -0.00535 |      -0.04229 |      16.99082 |       0.00317 |       1.40977
+-----------------------------------
+| EpExecMean      | 0.000956      |
+| EpLenMean       | 3.49          |
+| EpRewMean       | 71.5          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 6984          |
+| TimeElapsed     | 6.22e+04      |
+| TimestepsSoFar  | 34558         |
+| ev_tdlam_before | 0.989         |
+| loss_ent        | 1.4097681     |
+| loss_kl         | 0.0031677615  |
+| loss_pol_entpen | -0.042293042  |
+| loss_pol_surr   | -0.0053525385 |
+| loss_vf_loss    | 16.990818     |
+-----------------------------------
+********** Iteration 135 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00050 |      -0.04249 |      16.36891 |       0.00045 |       1.41621
+     -0.00409 |      -0.04129 |      13.71166 |       0.00402 |       1.37639
+     -0.00787 |      -0.04102 |      10.40339 |       0.00632 |       1.36739
+     -0.00801 |      -0.04143 |       9.36394 |       0.00696 |       1.38107
+Evaluating losses...
+     -0.00826 |      -0.04182 |       7.05941 |       0.00728 |       1.39388
+----------------------------------
+| EpExecMean      | 0.00089      |
+| EpLenMean       | 3.57         |
+| EpRewMean       | 69.8         |
+| EpThisIter      | 72           |
+| EpisodesSoFar   | 7056         |
+| TimeElapsed     | 6.29e+04     |
+| TimestepsSoFar  | 34815        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.393877     |
+| loss_kl         | 0.007278022  |
+| loss_pol_entpen | -0.041816305 |
+| loss_pol_surr   | -0.008262219 |
+| loss_vf_loss    | 7.0594053    |
+----------------------------------
+********** Iteration 136 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00152 |      -0.04313 |      29.60677 |       0.00018 |       1.43759
+     -0.00899 |      -0.04413 |      29.70126 |       0.00217 |       1.47088
+     -0.01039 |      -0.04482 |      28.89673 |       0.00518 |       1.49405
+     -0.01337 |      -0.04466 |      27.40638 |       0.00570 |       1.48882
+Evaluating losses...
+     -0.01434 |      -0.04460 |      26.93965 |       0.00568 |       1.48669
+----------------------------------
+| EpExecMean      | 0.00123      |
+| EpLenMean       | 3.81         |
+| EpRewMean       | 73.5         |
+| EpThisIter      | 63           |
+| EpisodesSoFar   | 7119         |
+| TimeElapsed     | 6.35e+04     |
+| TimestepsSoFar  | 35070        |
+| ev_tdlam_before | 0.98         |
+| loss_ent        | 1.4866886    |
+| loss_kl         | 0.00567742   |
+| loss_pol_entpen | -0.044600654 |
+| loss_pol_surr   | -0.014335478 |
+| loss_vf_loss    | 26.939646    |
+----------------------------------
+********** Iteration 137 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00242 |      -0.04307 |      19.35776 |       0.00030 |       1.43554
+     -0.00739 |      -0.04216 |      19.07919 |       0.00189 |       1.40540
+     -0.00855 |      -0.04163 |      17.41028 |       0.00319 |       1.38751
+     -0.00922 |      -0.04168 |      16.11330 |       0.00340 |       1.38941
+Evaluating losses...
+     -0.00949 |      -0.04190 |      15.58665 |       0.00302 |       1.39681
+----------------------------------
+| EpExecMean      | 0.00141      |
+| EpLenMean       | 3.55         |
+| EpRewMean       | 73.1         |
+| EpThisIter      | 73           |
+| EpisodesSoFar   | 7192         |
+| TimeElapsed     | 6.42e+04     |
+| TimestepsSoFar  | 35327        |
+| ev_tdlam_before | 0.989        |
+| loss_ent        | 1.396806     |
+| loss_kl         | 0.0030164216 |
+| loss_pol_entpen | -0.04190418  |
+| loss_pol_surr   | -0.009490944 |
+| loss_vf_loss    | 15.586651    |
+----------------------------------
+********** Iteration 138 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00077 |      -0.03950 |       7.58015 |      3.69e-05 |       1.31674
+     -0.00599 |      -0.03897 |       7.03401 |       0.00044 |       1.29890
+     -0.00683 |      -0.03883 |       6.98319 |       0.00125 |       1.29429
+     -0.00690 |      -0.03904 |       6.93482 |       0.00212 |       1.30134
+Evaluating losses...
+     -0.00681 |      -0.03926 |       6.89649 |       0.00267 |       1.30872
+----------------------------------
+| EpExecMean      | 0.00108      |
+| EpLenMean       | 3.24         |
+| EpRewMean       | 67.9         |
+| EpThisIter      | 78           |
+| EpisodesSoFar   | 7270         |
+| TimeElapsed     | 6.5e+04      |
+| TimestepsSoFar  | 35582        |
+| ev_tdlam_before | 0.995        |
+| loss_ent        | 1.3087173    |
+| loss_kl         | 0.0026662806 |
+| loss_pol_entpen | -0.039261516 |
+| loss_pol_surr   | -0.006813895 |
+| loss_vf_loss    | 6.896487     |
+----------------------------------
+********** Iteration 139 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     7.81e-05 |      -0.04116 |      15.54570 |      4.75e-05 |       1.37208
+     -0.00236 |      -0.04119 |      15.30102 |       0.00038 |       1.37299
+     -0.00352 |      -0.04116 |      14.75036 |       0.00088 |       1.37201
+     -0.00447 |      -0.04158 |      14.11930 |       0.00164 |       1.38616
+Evaluating losses...
+     -0.00553 |      -0.04199 |      13.46408 |       0.00235 |       1.39968
+-----------------------------------
+| EpExecMean      | 0.00127       |
+| EpLenMean       | 3.61          |
+| EpRewMean       | 75.5          |
+| EpThisIter      | 70            |
+| EpisodesSoFar   | 7340          |
+| TimeElapsed     | 6.57e+04      |
+| TimestepsSoFar  | 35840         |
+| ev_tdlam_before | 0.991         |
+| loss_ent        | 1.3996814     |
+| loss_kl         | 0.002352992   |
+| loss_pol_entpen | -0.04199044   |
+| loss_pol_surr   | -0.0055326596 |
+| loss_vf_loss    | 13.464085     |
+-----------------------------------
+********** Iteration 140 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00064 |      -0.04118 |      14.87391 |      6.48e-05 |       1.37280
+     -0.00049 |      -0.04182 |      12.74804 |       0.00055 |       1.39388
+     -0.00170 |      -0.04245 |      11.05588 |       0.00174 |       1.41516
+     -0.00270 |      -0.04301 |       9.98080 |       0.00354 |       1.43369
+Evaluating losses...
+     -0.00302 |      -0.04333 |       9.66223 |       0.00466 |       1.44424
+-----------------------------------
+| EpExecMean      | 0.00106       |
+| EpLenMean       | 3.37          |
+| EpRewMean       | 72.2          |
+| EpThisIter      | 76            |
+| EpisodesSoFar   | 7416          |
+| TimeElapsed     | 6.65e+04      |
+| TimestepsSoFar  | 36092         |
+| ev_tdlam_before | 0.991         |
+| loss_ent        | 1.4442389     |
+| loss_kl         | 0.004658632   |
+| loss_pol_entpen | -0.043327164  |
+| loss_pol_surr   | -0.0030241795 |
+| loss_vf_loss    | 9.662226      |
+-----------------------------------
+********** Iteration 141 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00129 |      -0.04464 |      20.23793 |      5.73e-05 |       1.48804
+     -0.00158 |      -0.04524 |      20.17916 |       0.00068 |       1.50811
+     -0.00188 |      -0.04565 |      20.29826 |       0.00166 |       1.52156
+     -0.00246 |      -0.04571 |      20.04927 |       0.00214 |       1.52352
+Evaluating losses...
+     -0.00308 |      -0.04563 |      19.56218 |       0.00222 |       1.52109
+-----------------------------------
+| EpExecMean      | 0.00124       |
+| EpLenMean       | 3.36          |
+| EpRewMean       | 71.3          |
+| EpThisIter      | 78            |
+| EpisodesSoFar   | 7494          |
+| TimeElapsed     | 6.72e+04      |
+| TimestepsSoFar  | 36351         |
+| ev_tdlam_before | 0.988         |
+| loss_ent        | 1.5210919     |
+| loss_kl         | 0.00222104    |
+| loss_pol_entpen | -0.04563276   |
+| loss_pol_surr   | -0.0030777045 |
+| loss_vf_loss    | 19.562181     |
+-----------------------------------
+********** Iteration 142 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00074 |      -0.04392 |       5.41637 |      3.07e-05 |       1.46391
+     -0.00107 |      -0.04383 |       5.44535 |       0.00020 |       1.46101
+     -0.00209 |      -0.04388 |       5.43752 |       0.00055 |       1.46256
+     -0.00261 |      -0.04422 |       5.38906 |       0.00106 |       1.47413
+Evaluating losses...
+     -0.00299 |      -0.04443 |       5.31210 |       0.00124 |       1.48100
+-----------------------------------
+| EpExecMean      | 0.00106       |
+| EpLenMean       | 3.47          |
+| EpRewMean       | 75.5          |
+| EpThisIter      | 74            |
+| EpisodesSoFar   | 7568          |
+| TimeElapsed     | 6.8e+04       |
+| TimestepsSoFar  | 36607         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.4810019     |
+| loss_kl         | 0.001241605   |
+| loss_pol_entpen | -0.04443006   |
+| loss_pol_surr   | -0.0029855408 |
+| loss_vf_loss    | 5.312103      |
+-----------------------------------
+********** Iteration 143 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00104 |      -0.04563 |      11.89199 |      3.08e-05 |       1.52099
+     -0.00308 |      -0.04612 |      11.83691 |       0.00077 |       1.53748
+     -0.00053 |      -0.04634 |      11.72766 |       0.00249 |       1.54468
+     -0.00090 |      -0.04618 |      11.50620 |       0.00284 |       1.53921
+Evaluating losses...
+     -0.00185 |      -0.04601 |      11.41690 |       0.00269 |       1.53353
+-----------------------------------
+| EpExecMean      | 0.000885      |
+| EpLenMean       | 3.54          |
+| EpRewMean       | 78.2          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 7640          |
+| TimeElapsed     | 6.88e+04      |
+| TimestepsSoFar  | 36863         |
+| ev_tdlam_before | 0.993         |
+| loss_ent        | 1.5335339     |
+| loss_kl         | 0.002685262   |
+| loss_pol_entpen | -0.046006016  |
+| loss_pol_surr   | -0.0018521976 |
+| loss_vf_loss    | 11.4169035    |
+-----------------------------------
+********** Iteration 144 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00024 |      -0.04459 |      17.39977 |      2.74e-05 |       1.48635
+     -0.00089 |      -0.04495 |      17.02442 |       0.00063 |       1.49837
+     -0.00041 |      -0.04533 |      16.91447 |       0.00196 |       1.51098
+     -0.00037 |      -0.04560 |      16.78895 |       0.00286 |       1.52000
+Evaluating losses...
+     -0.00087 |      -0.04571 |      16.72253 |       0.00320 |       1.52354
+------------------------------------
+| EpExecMean      | 0.0012         |
+| EpLenMean       | 3.61           |
+| EpRewMean       | 77.2           |
+| EpThisIter      | 69             |
+| EpisodesSoFar   | 7709           |
+| TimeElapsed     | 6.94e+04       |
+| TimestepsSoFar  | 37115          |
+| ev_tdlam_before | 0.989          |
+| loss_ent        | 1.5235362      |
+| loss_kl         | 0.0031969289   |
+| loss_pol_entpen | -0.045706086   |
+| loss_pol_surr   | -0.00087335706 |
+| loss_vf_loss    | 16.722528      |
+------------------------------------
+********** Iteration 145 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00020 |      -0.04643 |       5.18119 |      4.19e-05 |       1.54764
+     -0.00502 |      -0.04624 |       5.17078 |       0.00040 |       1.54119
+     -0.00538 |      -0.04626 |       5.13700 |       0.00081 |       1.54201
+     -0.00618 |      -0.04648 |       5.06921 |       0.00122 |       1.54924
+Evaluating losses...
+     -0.00675 |      -0.04665 |       5.02636 |       0.00159 |       1.55499
+-----------------------------------
+| EpExecMean      | 0.00113       |
+| EpLenMean       | 3.65          |
+| EpRewMean       | 73.1          |
+| EpThisIter      | 71            |
+| EpisodesSoFar   | 7780          |
+| TimeElapsed     | 7.02e+04      |
+| TimestepsSoFar  | 37375         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.5549939     |
+| loss_kl         | 0.0015933582  |
+| loss_pol_entpen | -0.046649814  |
+| loss_pol_surr   | -0.0067518065 |
+| loss_vf_loss    | 5.0263624     |
+-----------------------------------
+********** Iteration 146 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00015 |      -0.04683 |       3.14516 |      6.25e-05 |       1.56095
+     -0.00311 |      -0.04638 |       3.09218 |       0.00063 |       1.54588
+     -0.00512 |      -0.04597 |       3.02609 |       0.00124 |       1.53227
+     -0.00637 |      -0.04597 |       2.96092 |       0.00135 |       1.53245
+Evaluating losses...
+     -0.00690 |      -0.04599 |       2.92694 |       0.00150 |       1.53300
+-----------------------------------
+| EpExecMean      | 0.000807      |
+| EpLenMean       | 3.66          |
+| EpRewMean       | 74.6          |
+| EpThisIter      | 70            |
+| EpisodesSoFar   | 7850          |
+| TimeElapsed     | 7.09e+04      |
+| TimestepsSoFar  | 37627         |
+| ev_tdlam_before | 0.998         |
+| loss_ent        | 1.533005      |
+| loss_kl         | 0.0014989395  |
+| loss_pol_entpen | -0.045990147  |
+| loss_pol_surr   | -0.0069024586 |
+| loss_vf_loss    | 2.9269435     |
+-----------------------------------
+********** Iteration 147 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -7.22e-06 |      -0.04512 |      17.48005 |      3.35e-05 |       1.50390
+     -0.00450 |      -0.04524 |      17.41313 |       0.00056 |       1.50812
+     -0.00743 |      -0.04539 |      17.23441 |       0.00251 |       1.51301
+     -0.00800 |      -0.04574 |      17.13787 |       0.00378 |       1.52455
+Evaluating losses...
+     -0.00836 |      -0.04588 |      16.66315 |       0.00393 |       1.52930
+----------------------------------
+| EpExecMean      | 0.000952     |
+| EpLenMean       | 3.85         |
+| EpRewMean       | 70.4         |
+| EpThisIter      | 66           |
+| EpisodesSoFar   | 7916         |
+| TimeElapsed     | 7.16e+04     |
+| TimestepsSoFar  | 37888        |
+| ev_tdlam_before | 0.988        |
+| loss_ent        | 1.5293043    |
+| loss_kl         | 0.0039320844 |
+| loss_pol_entpen | -0.04587913  |
+| loss_pol_surr   | -0.008361027 |
+| loss_vf_loss    | 16.66315     |
+----------------------------------
+********** Iteration 148 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00022 |      -0.04622 |       2.45996 |      1.47e-05 |       1.54077
+     -0.00361 |      -0.04595 |       2.37851 |       0.00025 |       1.53157
+     -0.00376 |      -0.04577 |       2.35303 |       0.00115 |       1.52557
+     -0.00450 |      -0.04575 |       2.19810 |       0.00111 |       1.52497
+Evaluating losses...
+     -0.00492 |      -0.04578 |       2.17448 |       0.00089 |       1.52592
+-----------------------------------
+| EpExecMean      | 0.00076       |
+| EpLenMean       | 3.62          |
+| EpRewMean       | 74.9          |
+| EpThisIter      | 73            |
+| EpisodesSoFar   | 7989          |
+| TimeElapsed     | 7.24e+04      |
+| TimestepsSoFar  | 38140         |
+| ev_tdlam_before | 0.999         |
+| loss_ent        | 1.5259233     |
+| loss_kl         | 0.00088788057 |
+| loss_pol_entpen | -0.045777693  |
+| loss_pol_surr   | -0.004921926  |
+| loss_vf_loss    | 2.174482      |
+-----------------------------------
+********** Iteration 149 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00035 |      -0.04557 |       1.99404 |      6.22e-05 |       1.51900
+     -0.00107 |      -0.04583 |       2.04539 |       0.00100 |       1.52776
+     -0.00193 |      -0.04560 |       2.03969 |       0.00151 |       1.52011
+     -0.00369 |      -0.04514 |       2.01556 |       0.00088 |       1.50474
+Evaluating losses...
+     -0.00335 |      -0.04496 |       1.96926 |       0.00081 |       1.49877
+-----------------------------------
+| EpExecMean      | 0.000689      |
+| EpLenMean       | 3.48          |
+| EpRewMean       | 78.5          |
+| EpThisIter      | 73            |
+| EpisodesSoFar   | 8062          |
+| TimeElapsed     | 7.32e+04      |
+| TimestepsSoFar  | 38399         |
+| ev_tdlam_before | 0.999         |
+| loss_ent        | 1.4987731     |
+| loss_kl         | 0.00080859556 |
+| loss_pol_entpen | -0.044963192  |
+| loss_pol_surr   | -0.0033510514 |
+| loss_vf_loss    | 1.969264      |
+-----------------------------------
+********** Iteration 150 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     3.33e-05 |      -0.04531 |      12.04544 |      2.55e-05 |       1.51027
+     -0.00031 |      -0.04535 |      11.97087 |       0.00016 |       1.51170
+     -0.00099 |      -0.04545 |      11.87665 |       0.00040 |       1.51504
+     -0.00112 |      -0.04557 |      11.72205 |       0.00072 |       1.51897
+Evaluating losses...
+     -0.00134 |      -0.04567 |      11.60029 |       0.00086 |       1.52239
+-----------------------------------
+| EpExecMean      | 0.00104       |
+| EpLenMean       | 3.47          |
+| EpRewMean       | 76.7          |
+| EpThisIter      | 73            |
+| EpisodesSoFar   | 8135          |
+| TimeElapsed     | 7.39e+04      |
+| TimestepsSoFar  | 38654         |
+| ev_tdlam_before | 0.993         |
+| loss_ent        | 1.5223892     |
+| loss_kl         | 0.0008602296  |
+| loss_pol_entpen | -0.045671675  |
+| loss_pol_surr   | -0.0013421066 |
+| loss_vf_loss    | 11.600287     |
+-----------------------------------
+********** Iteration 151 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00030 |      -0.04429 |      10.17243 |      1.21e-05 |       1.47623
+     -0.00116 |      -0.04436 |      10.03573 |       0.00015 |       1.47880
+     -0.00236 |      -0.04451 |       9.65876 |       0.00065 |       1.48372
+     -0.00328 |      -0.04471 |       8.96917 |       0.00125 |       1.49048
+Evaluating losses...
+     -0.00335 |      -0.04489 |       8.75387 |       0.00167 |       1.49642
+-----------------------------------
+| EpExecMean      | 0.00107       |
+| EpLenMean       | 3.57          |
+| EpRewMean       | 74.1          |
+| EpThisIter      | 71            |
+| EpisodesSoFar   | 8206          |
+| TimeElapsed     | 7.46e+04      |
+| TimestepsSoFar  | 38911         |
+| ev_tdlam_before | 0.994         |
+| loss_ent        | 1.4964182     |
+| loss_kl         | 0.0016713529  |
+| loss_pol_entpen | -0.044892546  |
+| loss_pol_surr   | -0.0033488814 |
+| loss_vf_loss    | 8.75387       |
+-----------------------------------
+********** Iteration 152 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00029 |      -0.04514 |       5.58746 |      3.10e-05 |       1.50466
+     -0.00279 |      -0.04524 |       5.79362 |       0.00032 |       1.50812
+     -0.00284 |      -0.04516 |       5.75914 |       0.00075 |       1.50525
+     -0.00289 |      -0.04503 |       5.74830 |       0.00124 |       1.50099
+Evaluating losses...
+     -0.00330 |      -0.04509 |       5.69204 |       0.00134 |       1.50286
+-----------------------------------
+| EpExecMean      | 0.00104       |
+| EpLenMean       | 3.63          |
+| EpRewMean       | 73.1          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 8278          |
+| TimeElapsed     | 7.54e+04      |
+| TimestepsSoFar  | 39166         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.5028641     |
+| loss_kl         | 0.0013390799  |
+| loss_pol_entpen | -0.045085922  |
+| loss_pol_surr   | -0.0032967352 |
+| loss_vf_loss    | 5.6920433     |
+-----------------------------------
+********** Iteration 153 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00043 |      -0.04582 |       9.05785 |      4.36e-05 |       1.52741
+     -0.00206 |      -0.04554 |       8.85178 |       0.00047 |       1.51812
+     -0.00262 |      -0.04524 |       8.68563 |       0.00086 |       1.50814
+     -0.00307 |      -0.04537 |       8.36328 |       0.00080 |       1.51242
+Evaluating losses...
+     -0.00288 |      -0.04553 |       8.25951 |       0.00081 |       1.51762
+-----------------------------------
+| EpExecMean      | 0.00084       |
+| EpLenMean       | 3.53          |
+| EpRewMean       | 74.7          |
+| EpThisIter      | 70            |
+| EpisodesSoFar   | 8348          |
+| TimeElapsed     | 7.61e+04      |
+| TimestepsSoFar  | 39420         |
+| ev_tdlam_before | 0.994         |
+| loss_ent        | 1.5176233     |
+| loss_kl         | 0.00081094354 |
+| loss_pol_entpen | -0.0455287    |
+| loss_pol_surr   | -0.002880659  |
+| loss_vf_loss    | 8.259508      |
+-----------------------------------
+********** Iteration 154 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00040 |      -0.04488 |      13.35842 |      1.52e-05 |       1.49600
+     -0.00168 |      -0.04496 |      13.31330 |       0.00015 |       1.49867
+     -0.00208 |      -0.04508 |      13.33010 |       0.00039 |       1.50254
+     -0.00223 |      -0.04526 |      13.19866 |       0.00065 |       1.50877
+Evaluating losses...
+     -0.00230 |      -0.04539 |      13.09559 |       0.00085 |       1.51305
+-----------------------------------
+| EpExecMean      | 0.000938      |
+| EpLenMean       | 3.59          |
+| EpRewMean       | 76.3          |
+| EpThisIter      | 71            |
+| EpisodesSoFar   | 8419          |
+| TimeElapsed     | 7.68e+04      |
+| TimestepsSoFar  | 39680         |
+| ev_tdlam_before | 0.992         |
+| loss_ent        | 1.5130533     |
+| loss_kl         | 0.0008468528  |
+| loss_pol_entpen | -0.045391597  |
+| loss_pol_surr   | -0.0022953209 |
+| loss_vf_loss    | 13.095589     |
+-----------------------------------
+********** Iteration 155 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     9.57e-05 |      -0.04573 |      15.36540 |      1.60e-05 |       1.52427
+     -0.00093 |      -0.04577 |      15.16507 |       0.00011 |       1.52570
+     -0.00124 |      -0.04578 |      14.49609 |       0.00036 |       1.52604
+     -0.00194 |      -0.04586 |      13.67105 |       0.00082 |       1.52882
+Evaluating losses...
+     -0.00202 |      -0.04600 |      13.36839 |       0.00118 |       1.53344
+-----------------------------------
+| EpExecMean      | 0.00122       |
+| EpLenMean       | 3.71          |
+| EpRewMean       | 77.1          |
+| EpThisIter      | 68            |
+| EpisodesSoFar   | 8487          |
+| TimeElapsed     | 7.75e+04      |
+| TimestepsSoFar  | 39935         |
+| ev_tdlam_before | 0.991         |
+| loss_ent        | 1.5334361     |
+| loss_kl         | 0.001184255   |
+| loss_pol_entpen | -0.04600308   |
+| loss_pol_surr   | -0.0020227842 |
+| loss_vf_loss    | 13.368391     |
+-----------------------------------
+********** Iteration 156 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00026 |      -0.04604 |       8.16840 |      1.54e-05 |       1.53457
+     -0.00178 |      -0.04613 |       8.28412 |       0.00014 |       1.53767
+     -0.00342 |      -0.04589 |       8.12894 |       0.00032 |       1.52954
+     -0.00441 |      -0.04569 |       7.78471 |       0.00060 |       1.52299
+Evaluating losses...
+     -0.00491 |      -0.04561 |       7.57663 |       0.00076 |       1.52038
+----------------------------------
+| EpExecMean      | 0.00123      |
+| EpLenMean       | 3.67         |
+| EpRewMean       | 80.6         |
+| EpThisIter      | 70           |
+| EpisodesSoFar   | 8557         |
+| TimeElapsed     | 7.82e+04     |
+| TimestepsSoFar  | 40191        |
+| ev_tdlam_before | 0.995        |
+| loss_ent        | 1.5203836    |
+| loss_kl         | 0.0007598655 |
+| loss_pol_entpen | -0.045611504 |
+| loss_pol_surr   | -0.00490728  |
+| loss_vf_loss    | 7.576627     |
+----------------------------------
+********** Iteration 157 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00020 |      -0.04562 |       5.76621 |      2.59e-05 |       1.52055
+     -0.00119 |      -0.04556 |       5.75363 |       0.00023 |       1.51856
+     -0.00205 |      -0.04565 |       5.58858 |       0.00039 |       1.52164
+     -0.00337 |      -0.04582 |       5.47126 |       0.00063 |       1.52727
+Evaluating losses...
+     -0.00376 |      -0.04590 |       5.38226 |       0.00085 |       1.53009
+-----------------------------------
+| EpExecMean      | 0.000783      |
+| EpLenMean       | 3.51          |
+| EpRewMean       | 78.5          |
+| EpThisIter      | 73            |
+| EpisodesSoFar   | 8630          |
+| TimeElapsed     | 7.9e+04       |
+| TimestepsSoFar  | 40444         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.5300882     |
+| loss_kl         | 0.0008459262  |
+| loss_pol_entpen | -0.045902643  |
+| loss_pol_surr   | -0.0037589204 |
+| loss_vf_loss    | 5.3822594     |
+-----------------------------------
+********** Iteration 158 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00018 |      -0.04739 |      16.70872 |      2.90e-05 |       1.57973
+     -0.00208 |      -0.04749 |      16.51913 |       0.00014 |       1.58301
+     -0.00272 |      -0.04755 |      16.21268 |       0.00037 |       1.58502
+     -0.00318 |      -0.04769 |      15.66374 |       0.00073 |       1.58971
+Evaluating losses...
+     -0.00330 |      -0.04780 |      15.44479 |       0.00091 |       1.59319
+-----------------------------------
+| EpExecMean      | 0.000951      |
+| EpLenMean       | 3.72          |
+| EpRewMean       | 71.6          |
+| EpThisIter      | 66            |
+| EpisodesSoFar   | 8696          |
+| TimeElapsed     | 7.97e+04      |
+| TimestepsSoFar  | 40701         |
+| ev_tdlam_before | 0.989         |
+| loss_ent        | 1.5931891     |
+| loss_kl         | 0.0009054255  |
+| loss_pol_entpen | -0.047795676  |
+| loss_pol_surr   | -0.0032950565 |
+| loss_vf_loss    | 15.444787     |
+-----------------------------------
+********** Iteration 159 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00016 |      -0.04709 |       4.90779 |      1.24e-05 |       1.56976
+     -0.00182 |      -0.04684 |       4.86424 |       0.00018 |       1.56149
+     -0.00193 |      -0.04673 |       4.87549 |       0.00050 |       1.55756
+     -0.00207 |      -0.04677 |       4.88777 |       0.00051 |       1.55913
+Evaluating losses...
+     -0.00244 |      -0.04685 |       4.84757 |       0.00044 |       1.56151
+-----------------------------------
+| EpExecMean      | 0.00104       |
+| EpLenMean       | 3.7           |
+| EpRewMean       | 73.6          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 8768          |
+| TimeElapsed     | 8.04e+04      |
+| TimestepsSoFar  | 40957         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.5615078     |
+| loss_kl         | 0.0004413784  |
+| loss_pol_entpen | -0.046845227  |
+| loss_pol_surr   | -0.0024441332 |
+| loss_vf_loss    | 4.847565      |
+-----------------------------------
+********** Iteration 160 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00067 |      -0.04731 |      10.70261 |      7.87e-05 |       1.57711
+     -0.00199 |      -0.04745 |      10.19263 |       0.00076 |       1.58175
+     -0.00324 |      -0.04752 |       9.57109 |       0.00175 |       1.58385
+     -0.00380 |      -0.04752 |       8.91694 |       0.00253 |       1.58400
+Evaluating losses...
+     -0.00392 |      -0.04747 |       8.44372 |       0.00301 |       1.58249
+-----------------------------------
+| EpExecMean      | 0.00102       |
+| EpLenMean       | 3.72          |
+| EpRewMean       | 72.5          |
+| EpThisIter      | 69            |
+| EpisodesSoFar   | 8837          |
+| TimeElapsed     | 8.12e+04      |
+| TimestepsSoFar  | 41214         |
+| ev_tdlam_before | 0.993         |
+| loss_ent        | 1.5824908     |
+| loss_kl         | 0.0030112895  |
+| loss_pol_entpen | -0.047474727  |
+| loss_pol_surr   | -0.0039234627 |
+| loss_vf_loss    | 8.443724      |
+-----------------------------------
+********** Iteration 161 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00016 |      -0.04673 |       5.69100 |      7.02e-06 |       1.55754
+     -0.00100 |      -0.04676 |       5.63761 |       0.00014 |       1.55852
+     -0.00137 |      -0.04696 |       5.56761 |       0.00028 |       1.56518
+     -0.00202 |      -0.04730 |       5.47708 |       0.00067 |       1.57682
+Evaluating losses...
+     -0.00185 |      -0.04753 |       5.39258 |       0.00117 |       1.58426
+-----------------------------------
+| EpExecMean      | 0.00086       |
+| EpLenMean       | 3.63          |
+| EpRewMean       | 75.3          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 8909          |
+| TimeElapsed     | 8.19e+04      |
+| TimestepsSoFar  | 41470         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.5842602     |
+| loss_kl         | 0.0011741527  |
+| loss_pol_entpen | -0.047527805  |
+| loss_pol_surr   | -0.0018532053 |
+| loss_vf_loss    | 5.3925753     |
+-----------------------------------
+********** Iteration 162 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00036 |      -0.04636 |       8.46811 |      3.64e-05 |       1.54528
+     -0.00031 |      -0.04650 |       8.24343 |       0.00022 |       1.55007
+     -0.00111 |      -0.04652 |       7.99677 |       0.00028 |       1.55071
+     -0.00127 |      -0.04646 |       7.65083 |       0.00024 |       1.54879
+Evaluating losses...
+     -0.00169 |      -0.04643 |       7.48607 |       0.00028 |       1.54776
+-----------------------------------
+| EpExecMean      | 0.000853      |
+| EpLenMean       | 3.53          |
+| EpRewMean       | 76.9          |
+| EpThisIter      | 72            |
+| EpisodesSoFar   | 8981          |
+| TimeElapsed     | 8.27e+04      |
+| TimestepsSoFar  | 41728         |
+| ev_tdlam_before | 0.995         |
+| loss_ent        | 1.5477555     |
+| loss_kl         | 0.00027660484 |
+| loss_pol_entpen | -0.046432663  |
+| loss_pol_surr   | -0.0016929675 |
+| loss_vf_loss    | 7.4860654     |
+-----------------------------------
+********** Iteration 163 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00034 |      -0.04725 |      13.41081 |      4.04e-05 |       1.57507
+     -0.00067 |      -0.04725 |      13.01064 |       0.00023 |       1.57485
+     -0.00105 |      -0.04725 |      12.54481 |       0.00028 |       1.57513
+     -0.00171 |      -0.04729 |      12.16195 |       0.00024 |       1.57620
+Evaluating losses...
+     -0.00197 |      -0.04733 |      12.01010 |       0.00023 |       1.57779
+-----------------------------------
+| EpExecMean      | 0.00113       |
+| EpLenMean       | 3.62          |
+| EpRewMean       | 75.5          |
+| EpThisIter      | 70            |
+| EpisodesSoFar   | 9051          |
+| TimeElapsed     | 8.34e+04      |
+| TimestepsSoFar  | 41981         |
+| ev_tdlam_before | 0.992         |
+| loss_ent        | 1.5777938     |
+| loss_kl         | 0.00022740063 |
+| loss_pol_entpen | -0.047333814  |
+| loss_pol_surr   | -0.0019696131 |
+| loss_vf_loss    | 12.0100975    |
+-----------------------------------
+********** Iteration 164 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00029 |      -0.04763 |      21.08083 |      2.06e-05 |       1.58781
+     -0.00298 |      -0.04769 |      20.02116 |       0.00023 |       1.58973
+     -0.00358 |      -0.04772 |      18.84053 |       0.00060 |       1.59057
+     -0.00395 |      -0.04781 |      17.80445 |       0.00087 |       1.59358
+Evaluating losses...
+     -0.00412 |      -0.04790 |      17.14767 |       0.00099 |       1.59673
+-----------------------------------
+| EpExecMean      | 0.00137       |
+| EpLenMean       | 3.82          |
+| EpRewMean       | 76.9          |
+| EpThisIter      | 66            |
+| EpisodesSoFar   | 9117          |
+| TimeElapsed     | 8.41e+04      |
+| TimestepsSoFar  | 42240         |
+| ev_tdlam_before | 0.986         |
+| loss_ent        | 1.5967329     |
+| loss_kl         | 0.0009870577  |
+| loss_pol_entpen | -0.04790198   |
+| loss_pol_surr   | -0.0041207634 |
+| loss_vf_loss    | 17.147665     |
+-----------------------------------
+********** Iteration 165 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -1.81e-05 |      -0.04760 |       7.06232 |      1.49e-05 |       1.58682
+     -0.00133 |      -0.04753 |       7.06037 |      6.95e-05 |       1.58425
+     -0.00193 |      -0.04737 |       6.99374 |       0.00012 |       1.57888
+     -0.00217 |      -0.04727 |       6.90409 |       0.00018 |       1.57556
+Evaluating losses...
+     -0.00236 |      -0.04725 |       6.84225 |       0.00018 |       1.57512
+-----------------------------------
+| EpExecMean      | 0.00113       |
+| EpLenMean       | 3.84          |
+| EpRewMean       | 75.9          |
+| EpThisIter      | 68            |
+| EpisodesSoFar   | 9185          |
+| TimeElapsed     | 8.49e+04      |
+| TimestepsSoFar  | 42495         |
+| ev_tdlam_before | 0.996         |
+| loss_ent        | 1.5751219     |
+| loss_kl         | 0.00017741135 |
+| loss_pol_entpen | -0.047253657  |
+| loss_pol_surr   | -0.0023591928 |
+| loss_vf_loss    | 6.8422503     |
+-----------------------------------
+********** Iteration 166 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00044 |      -0.04877 |       9.24016 |      3.12e-06 |       1.62559
+     7.08e-05 |      -0.04876 |       8.94329 |      7.33e-05 |       1.62548
+     -0.00053 |      -0.04874 |       8.51358 |       0.00017 |       1.62483
+     -0.00159 |      -0.04885 |       8.06221 |       0.00021 |       1.62844
+Evaluating losses...
+     -0.00143 |      -0.04891 |       7.84489 |       0.00029 |       1.63034
+-----------------------------------
+| EpExecMean      | 0.0012        |
+| EpLenMean       | 3.58          |
+| EpRewMean       | 70.7          |
+| EpThisIter      | 74            |
+| EpisodesSoFar   | 9259          |
+| TimeElapsed     | 8.56e+04      |
+| TimestepsSoFar  | 42752         |
+| ev_tdlam_before | 0.994         |
+| loss_ent        | 1.6303427     |
+| loss_kl         | 0.0002876792  |
+| loss_pol_entpen | -0.048910283  |
+| loss_pol_surr   | -0.0014347835 |
+| loss_vf_loss    | 7.8448887     |
+-----------------------------------
+********** Iteration 167 ************
+- best, reward: 1.471660, exec: 0.000400680, duration: 23:51:23.402316, schedule: blur_y.gpu_tile(x, y, xi, yi, 64, 16); blur_y.unroll(yi, 4); blur_y.unroll(xi, 2); 
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     3.68e-05 |      -0.04769 |       4.33752 |      4.35e-06 |       1.58957
+     -0.00039 |      -0.04774 |       4.38632 |      4.77e-05 |       1.59146
+     -0.00050 |      -0.04790 |       4.40529 |       0.00015 |       1.59658
+     -0.00055 |      -0.04807 |       4.40047 |       0.00027 |       1.60241
+Evaluating losses...
+     -0.00061 |      -0.04817 |       4.39281 |       0.00035 |       1.60569
+-----------------------------------
+| EpExecMean      | 0.00102       |
+| EpLenMean       | 3.49          |
+| EpRewMean       | 69.3          |
+| EpThisIter      | 74            |
+| EpisodesSoFar   | 9333          |
+| TimeElapsed     | 8.65e+04      |
+| TimestepsSoFar  | 43008         |
+| ev_tdlam_before | 0.997         |
+| loss_ent        | 1.6056921     |
+| loss_kl         | 0.00035002455 |
+| loss_pol_entpen | -0.048170764  |
+| loss_pol_surr   | -0.0006134957 |
+| loss_vf_loss    | 4.3928084     |
+-----------------------------------
+********** Iteration 168 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00029 |      -0.04729 |       3.63062 |      6.35e-06 |       1.57635
+     -0.00145 |      -0.04718 |       3.61662 |      8.43e-05 |       1.57254
+     -0.00160 |      -0.04712 |       3.59839 |       0.00013 |       1.57062
+     -0.00179 |      -0.04718 |       3.58538 |      9.98e-05 |       1.57275
+Evaluating losses...
+     -0.00179 |      -0.04727 |       3.56220 |      8.21e-05 |       1.57561
+-----------------------------------
+| EpExecMean      | 0.000658      |
+| EpLenMean       | 3.66          |
+| EpRewMean       | 73.1          |
+| EpThisIter      | 66            |
+| EpisodesSoFar   | 9399          |
+| TimeElapsed     | 8.72e+04      |
+| TimestepsSoFar  | 43263         |
+| ev_tdlam_before | 0.998         |
+| loss_ent        | 1.5756063     |
+| loss_kl         | 8.213436e-05  |
+| loss_pol_entpen | -0.04726819   |
+| loss_pol_surr   | -0.0017903224 |
+| loss_vf_loss    | 3.5621955     |
+-----------------------------------
+********** Iteration 169 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -8.23e-05 |      -0.04673 |       6.73882 |      3.70e-06 |       1.55757
+     -0.00111 |      -0.04673 |       6.63303 |      2.11e-05 |       1.55766
+     -0.00171 |      -0.04673 |       6.44392 |      6.15e-05 |       1.55754
+     -0.00190 |      -0.04677 |       6.29005 |       0.00015 |       1.55906
+Evaluating losses...
+     -0.00190 |      -0.04683 |       6.14294 |       0.00020 |       1.56085
+-----------------------------------
+| EpExecMean      | 0.000844      |
+| EpLenMean       | 3.77          |
+| EpRewMean       | 75.9          |
+| EpThisIter      | 69            |
+| EpisodesSoFar   | 9468          |
+| TimeElapsed     | 8.8e+04       |
+| TimestepsSoFar  | 43519         |
+| ev_tdlam_before | 0.996         |
+| loss_ent        | 1.56085       |
+| loss_kl         | 0.00019923784 |
+| loss_pol_entpen | -0.0468255    |
+| loss_pol_surr   | -0.00189602   |
+| loss_vf_loss    | 6.1429386     |
+-----------------------------------
+********** Iteration 170 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00072 |      -0.04474 |      30.77879 |      6.67e-06 |       1.49136
+     -0.00237 |      -0.04496 |      30.70525 |       0.00012 |       1.49882
+     -0.00277 |      -0.04506 |      30.54050 |       0.00030 |       1.50204
+     -0.00322 |      -0.04504 |      30.45354 |       0.00041 |       1.50117
+Evaluating losses...
+     -0.00324 |      -0.04506 |      30.42113 |       0.00044 |       1.50194
+-----------------------------------
+| EpExecMean      | 0.00122       |
+| EpLenMean       | 4.07          |
+| EpRewMean       | 76.1          |
+| EpThisIter      | 58            |
+| EpisodesSoFar   | 9526          |
+| TimeElapsed     | 8.86e+04      |
+| TimestepsSoFar  | 43773         |
+| ev_tdlam_before | 0.98          |
+| loss_ent        | 1.5019375     |
+| loss_kl         | 0.00044233553 |
+| loss_pol_entpen | -0.045058124  |
+| loss_pol_surr   | -0.0032434464 |
+| loss_vf_loss    | 30.421127     |
+-----------------------------------
+********** Iteration 171 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00011 |      -0.04667 |      10.36137 |      1.94e-06 |       1.55564
+     -0.00101 |      -0.04659 |      10.21999 |      3.08e-05 |       1.55301
+     -0.00142 |      -0.04651 |      10.05217 |      7.44e-05 |       1.55025
+     -0.00151 |      -0.04648 |       9.92616 |       0.00010 |       1.54934
+Evaluating losses...
+     -0.00155 |      -0.04650 |       9.74576 |      9.96e-05 |       1.55008
+-----------------------------------
+| EpExecMean      | 0.0013        |
+| EpLenMean       | 4.29          |
+| EpRewMean       | 74.2          |
+| EpThisIter      | 63            |
+| EpisodesSoFar   | 9589          |
+| TimeElapsed     | 8.93e+04      |
+| TimestepsSoFar  | 44030         |
+| ev_tdlam_before | 0.993         |
+| loss_ent        | 1.5500834     |
+| loss_kl         | 9.9623765e-05 |
+| loss_pol_entpen | -0.046502504  |
+| loss_pol_surr   | -0.0015459321 |
+| loss_vf_loss    | 9.745758      |
+-----------------------------------
+********** Iteration 172 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00011 |      -0.04810 |       2.92042 |      2.02e-06 |       1.60325
+     -0.00073 |      -0.04802 |       2.94087 |      2.28e-05 |       1.60052
+     -0.00127 |      -0.04796 |       2.93808 |      5.59e-05 |       1.59858
+     -0.00130 |      -0.04794 |       2.93297 |      6.45e-05 |       1.59803
+Evaluating losses...
+     -0.00142 |      -0.04794 |       2.91083 |      7.93e-05 |       1.59807
+-----------------------------------
+| EpExecMean      | 0.000764      |
+| EpLenMean       | 3.85          |
+| EpRewMean       | 77.4          |
+| EpThisIter      | 68            |
+| EpisodesSoFar   | 9657          |
+| TimeElapsed     | 9.01e+04      |
+| TimestepsSoFar  | 44288         |
+| ev_tdlam_before | 0.998         |
+| loss_ent        | 1.5980656     |
+| loss_kl         | 7.9273115e-05 |
+| loss_pol_entpen | -0.047941968  |
+| loss_pol_surr   | -0.001423331  |
+| loss_vf_loss    | 2.9108284     |
+-----------------------------------
+********** Iteration 173 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     3.67e-05 |      -0.04765 |      11.45487 |      7.28e-07 |       1.58833
+     -0.00019 |      -0.04763 |      11.42982 |      5.89e-06 |       1.58773
+     -0.00031 |      -0.04762 |      11.39276 |      1.62e-05 |       1.58739
+     -0.00046 |      -0.04765 |      11.32836 |      3.43e-05 |       1.58822
+Evaluating losses...
+     -0.00056 |      -0.04768 |      11.29781 |      5.40e-05 |       1.58930
+------------------------------------
+| EpExecMean      | 0.00102        |
+| EpLenMean       | 3.71           |
+| EpRewMean       | 75.8           |
+| EpThisIter      | 69             |
+| EpisodesSoFar   | 9726           |
+| TimeElapsed     | 9.08e+04       |
+| TimestepsSoFar  | 44540          |
+| ev_tdlam_before | 0.993          |
+| loss_ent        | 1.5892959      |
+| loss_kl         | 5.3964784e-05  |
+| loss_pol_entpen | -0.047678873   |
+| loss_pol_surr   | -0.00056332815 |
+| loss_vf_loss    | 11.297814      |
+------------------------------------
+********** Iteration 174 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -1.53e-05 |      -0.04686 |       9.71569 |      1.05e-06 |       1.56203
+     -0.00044 |      -0.04685 |       9.73276 |      8.94e-06 |       1.56158
+     -0.00060 |      -0.04680 |       9.72412 |      2.27e-05 |       1.56001
+     -0.00072 |      -0.04678 |       9.69615 |      3.24e-05 |       1.55943
+Evaluating losses...
+     -0.00081 |      -0.04679 |       9.67107 |      3.41e-05 |       1.55973
+------------------------------------
+| EpExecMean      | 0.00118        |
+| EpLenMean       | 3.8            |
+| EpRewMean       | 71.1           |
+| EpThisIter      | 65             |
+| EpisodesSoFar   | 9791           |
+| TimeElapsed     | 9.15e+04       |
+| TimestepsSoFar  | 44795          |
+| ev_tdlam_before | 0.993          |
+| loss_ent        | 1.5597268      |
+| loss_kl         | 3.4111046e-05  |
+| loss_pol_entpen | -0.046791803   |
+| loss_pol_surr   | -0.00080896914 |
+| loss_vf_loss    | 9.671073       |
+------------------------------------
+********** Iteration 175 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     -0.00017 |      -0.04789 |       9.79500 |      5.63e-07 |       1.59636
+     -0.00055 |      -0.04789 |       9.77905 |      8.16e-06 |       1.59625
+     -0.00066 |      -0.04788 |       9.76136 |      2.42e-05 |       1.59598
+     -0.00067 |      -0.04790 |       9.70984 |      3.63e-05 |       1.59673
+Evaluating losses...
+     -0.00068 |      -0.04793 |       9.69331 |      4.07e-05 |       1.59762
+------------------------------------
+| EpExecMean      | 0.000747       |
+| EpLenMean       | 3.86           |
+| EpRewMean       | 75.2           |
+| EpThisIter      | 69             |
+| EpisodesSoFar   | 9860           |
+| TimeElapsed     | 9.23e+04       |
+| TimestepsSoFar  | 45055          |
+| ev_tdlam_before | 0.994          |
+| loss_ent        | 1.5976154      |
+| loss_kl         | 4.0679573e-05  |
+| loss_pol_entpen | -0.04792846    |
+| loss_pol_surr   | -0.00067582354 |
+| loss_vf_loss    | 9.69331        |
+------------------------------------
+********** Iteration 176 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+      0.00013 |      -0.04841 |      10.24646 |      2.00e-07 |       1.61368
+    -4.77e-06 |      -0.04842 |      10.19356 |      1.29e-06 |       1.61389
+     6.07e-05 |      -0.04841 |      10.11200 |      5.43e-06 |       1.61369
+    -8.66e-05 |      -0.04841 |      10.03208 |      4.62e-06 |       1.61356
+Evaluating losses...
+     -0.00028 |      -0.04841 |       9.97758 |      4.36e-06 |       1.61376
+------------------------------------
+| EpExecMean      | 0.000668       |
+| EpLenMean       | 3.88           |
+| EpRewMean       | 78.4           |
+| EpThisIter      | 66             |
+| EpisodesSoFar   | 9926           |
+| TimeElapsed     | 9.31e+04       |
+| TimestepsSoFar  | 45311          |
+| ev_tdlam_before | 0.994          |
+| loss_ent        | 1.6137593      |
+| loss_kl         | 4.3638074e-06  |
+| loss_pol_entpen | -0.048412774   |
+| loss_pol_surr   | -0.00027973484 |
+| loss_vf_loss    | 9.977577       |
+------------------------------------
+********** Iteration 177 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+     5.54e-05 |      -0.04697 |      14.46152 |      5.86e-08 |       1.56552
+    -8.23e-05 |      -0.04697 |      14.40621 |      4.09e-07 |       1.56578
+     -0.00018 |      -0.04698 |      14.35935 |      1.58e-06 |       1.56605
+     -0.00018 |      -0.04699 |      14.31470 |      3.18e-06 |       1.56626
+Evaluating losses...
+     -0.00023 |      -0.04699 |      14.26229 |      3.52e-06 |       1.56633
+-----------------------------------
+| EpExecMean      | 0.000938      |
+| EpLenMean       | 3.98          |
+| EpRewMean       | 79.7          |
+| EpThisIter      | 63            |
+| EpisodesSoFar   | 9989          |
+| TimeElapsed     | 9.38e+04      |
+| TimestepsSoFar  | 45564         |
+| ev_tdlam_before | 0.99          |
+| loss_ent        | 1.5663265     |
+| loss_kl         | 3.51996e-06   |
+| loss_pol_entpen | -0.04698979   |
+| loss_pol_surr   | -0.0002287142 |
+| loss_vf_loss    | 14.262287     |
+-----------------------------------
+********** Iteration 178 ************
+Optimizing...
+     pol_surr |    pol_entpen |       vf_loss |            kl |           ent
+    -4.50e-06 |      -0.04614 |       8.85430 |      1.28e-08 |       1.53787
+    -2.24e-05 |      -0.04614 |       8.85118 |      4.17e-08 |       1.53791
+    -3.65e-05 |      -0.04614 |       8.84683 |      7.11e-08 |       1.53790
+    -4.01e-05 |      -0.04614 |       8.84471 |      1.03e-07 |       1.53787
+Evaluating losses...
+    -4.10e-05 |      -0.04614 |       8.84346 |      9.29e-08 |       1.53786
+------------------------------------
+| EpExecMean      | 0.00114        |
+| EpLenMean       | 3.88           |
+| EpRewMean       | 75.4           |
+| EpThisIter      | 64             |
+| EpisodesSoFar   | 10053          |
+| TimeElapsed     | 9.45e+04       |
+| TimestepsSoFar  | 45819          |
+| ev_tdlam_before | 0.994          |
+| loss_ent        | 1.5378649      |
+| loss_kl         | 9.2874195e-08  |
+| loss_pol_entpen | -0.046135947   |
+| loss_pol_surr   | -4.1041523e-05 |
+| loss_vf_loss    | 8.843458       |
+------------------------------------

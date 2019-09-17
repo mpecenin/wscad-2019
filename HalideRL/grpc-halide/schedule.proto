@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+service ScheduleService {
+  rpc init (ScheduleInitRequest) returns (ScheduleInitResponse) {}
+  rpc step (ScheduleStepRequest) returns (ScheduleStepResponse) {}
+  rpc reset (ScheduleResetRequest) returns (ScheduleResetResponse) {}
+  rpc render (ScheduleRenderRequest) returns (ScheduleRenderResponse) {}
+  rpc close (ScheduleCloseRequest) returns (ScheduleCloseResponse) {}
+}
+
+message ScheduleInitRequest {
+  int32 algorithm_id = 1;
+  string input_image = 2;
+  int32 max_stage_directive = 3;
+}
+
+message ScheduleInitResponse {
+  int32 max_stage = 1;
+  int32 max_directive = 2;
+  int32 max_param = 3;
+  int32 schedule_map_range = 4;
+  double init_time_sec = 5;
+}
+
+message ScheduleStepRequest {
+  OperationRequest op = 1;
+}
+
+message ScheduleStepResponse {
+  bool exec_error = 1;
+  bool exec_timeout = 2;
+  OperationResponse op = 3;
+  double exec_time_sec = 4;
+}
+
+message ScheduleResetRequest {
+  repeated OperationRequest op = 1;
+}
+
+message ScheduleResetResponse {
+  repeated OperationResponse op = 1;
+}
+
+message ScheduleRenderRequest {
+}
+
+message ScheduleRenderResponse {
+  repeated string schedule_str = 1;
+}
+
+message ScheduleCloseRequest {
+}
+
+message ScheduleCloseResponse {
+}
+
+message OperationRequest {
+  int32 map_code = 1;
+}
+
+message OperationResponse {
+  repeated int32 elem_id = 1;
+}
+
